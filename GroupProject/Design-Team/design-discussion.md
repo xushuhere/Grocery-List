@@ -1,6 +1,6 @@
 #**Design 1**
 
-#![alt tag](https://github.gatech.edu/gt-omscs-se-2016fall/6300Fall16Team16/blob/master/GroupProject/Design-Team/design-agoel63.png)
+#![alt tag](images/design-agoel63.png)
 
 **Pros:** 
 
@@ -14,7 +14,7 @@
 
 #**Design 2**
 
-#![alt tag](https://github.gatech.edu/gt-omscs-se-2016fall/6300Fall16Team16/blob/master/GroupProject/Design-Team/design-dnelson42.png)
+#![alt tag](images/design-dnelson42.png)
 
 **Pros:** 
 
@@ -27,7 +27,7 @@
 
 #**Design 3**
 
-#![alt tag](https://github.gatech.edu/gt-omscs-se-2016fall/6300Fall16Team16/blob/master/GroupProject/Design-Team/design-sxu332.png)
+#![alt tag](images/design-sxu332.png)
 
 **Pros:** 
 
@@ -40,7 +40,7 @@
 
 #**Design 4**
 
-#![alt tag](https://github.gatech.edu/gt-omscs-se-2016fall/6300Fall16Team16/blob/master/GroupProject/Design-Team/design-zahmad8.png)
+#![alt tag](images/design-zahmad8.png)
 
 **Pros:** 
 
@@ -53,7 +53,7 @@
 
 
 #**Team Design**
-#![alt tag](https://github.gatech.edu/gt-omscs-se-2016fall/6300Fall16Team16/blob/master/GroupProject/Design-Team/design-team.jpg)
+#![alt tag](images/design-team.jpg)
 
 We discussed about individual’s designs and adapted some concepts. The diagram is presented above.
 
