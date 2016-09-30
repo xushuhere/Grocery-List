@@ -53,6 +53,7 @@
 
 
 #**Team Design**
+#![alt tag](https://github.gatech.edu/gt-omscs-se-2016fall/6300Fall16Team16/blob/master/GroupProject/Design-Team/design-team.jpg)
 
 We discussed about individual’s designs and adapted some concepts. The diagram is presented above.
 
