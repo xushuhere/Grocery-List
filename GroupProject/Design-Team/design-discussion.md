@@ -53,7 +53,7 @@
 
 
 #**Team Design**
-#![alt tag](images/design-team.jpg)
+#![alt tag](images/design-team.png)
 
 We discussed about individual’s designs and adapted some concepts. The diagram is presented above.
 
