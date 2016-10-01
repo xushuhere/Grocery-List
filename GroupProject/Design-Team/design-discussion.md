@@ -80,4 +80,9 @@ The grocery list manager app is a single user application to buy items in the li
 
 For the team design we kept the database class as a separate utility class that would handle all database interactions. We decided to accommodate pros of all individual designs in order to create an improved team design.
 
-User uses the application class in order to manage their lists
+User uses the application class in order to manage their lists.
+
+Lessons learnt: 
+- The first iteration of all designs had some flaws or things that could be improved. 
+- Looking at multiple designs helped in visualizing the best design for the application.
+
