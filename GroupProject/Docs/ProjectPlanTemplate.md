@@ -2,11 +2,13 @@
 
 *This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: Team 16: Anshul Goel, Dwight Nelson, Shu Xu, Zakariya Ahmad
 
 ## 1 Introduction
 
 *Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
+
+This is the project plan for a custom android application that manages grocery lists and items that the user wants to buy at a grocery store. 
 
 ## 2 Process Description
 
