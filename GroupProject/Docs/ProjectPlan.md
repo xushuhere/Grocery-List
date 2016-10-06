@@ -101,21 +101,43 @@ Our team consists of four team members. Every member will be in charge of one sp
 *Describe the team and their roles (there may be more roles than there are team members)*
 
 -Anshul Goel
---Team members' names*
-- Roles, with a short description of each role*
-- Table showing which team member(s) has which role(s)*
+Anshul will be the lead for the following deliverables and artifacts:
+--Use case documents and diagrams
+--Supplementary and non-functional requirements
+—-system architecture development
+
 
 -Dwight Nelson
-- *Team members' names*
-- *Roles, with a short description of each role*
-- *Table showing which team member(s) has which role(s)*
+Dwight will be the lead for the following deliverables and artifacts:
+--Use case documents and diagrams
+--Supplementary and non-functional requirements
+
 
 -Shu Xu
+
+Shu will be the lead for the following deliverables and artifacts:
+—database implementation
+--Supplementary and non-functional requirements
+
+
+-Zakariya Ahmad
+
+Zakariya will be the lead for the following deliverables and artifacts:
+--Use case documents and diagrams
+--Supplementary and non-functional requirements
+
+
 - *Team members' names*
 - *Roles, with a short description of each role*
 - *Table showing which team member(s) has which role(s)*
 
--Zakariya Ahmad
-- *Team members' names*
-- *Roles, with a short description of each role*
-- *Table showing which team member(s) has which role(s)*
+
+Table. Roles of each team member can be used to align columns.
+
+| Team Member   | Roles         |
+| ------------- |:-------------:| 
+| Anshul Goel   | Case developer |
+| Dwight Nelson | UI designer      |  
+| Shu Xu| test|    
+| Zakariya Ahmad| project leader, graphic design, |   
+
