@@ -11,11 +11,13 @@ This document describes the software development process (CS6300) for Team 16  o
 The grocery list manager will be implemented using the Rational Uniffied Process (RUP) which will consist of multiple phases, modifications, aspects and implementations throughout this software development process. Documents, design, codes and methods are generated as part of this process. 
 
 - *Review the requirement for software design* (done)
+- 
 ⋅⋅⋅ Activity description: In this activity, the team review the requirement from the customer and discuss the details of potential classes and use case for the design.
 ⋅⋅⋅ Entrance criteria: The detailed requirement from the customer.
 ⋅⋅⋅ Exit criteria: A blue print of the UML diagram is drafted and the flow of the use cases has been schemed.
 
 - *Design software architecture via UML diagram* (done)
+- 
 ⋅⋅⋅  Activity description: After the discussion about the details for the development, the team design UML diagram for software development, including the use cases, the interfae and future implemention considerations.
 ⋅⋅⋅  Entrance criteria: the requirement from the customer and blue print of the UML diagram from each member.
 ⋅⋅⋅ Exit criteria: A well-designed UML diagram for software development.
