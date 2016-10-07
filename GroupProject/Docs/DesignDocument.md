@@ -44,6 +44,12 @@
 *<u>Optionally</u>, you can decide to describe some dynamic aspects of your system using one or more behavioral diagrams, such as sequence and state diagrams.*
 
 ## 4 User Interface Design
-*For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
-#![alt tag](Images/MockUp.png)
+
+Base UI View for user
+#![alt tag](Images/MockUp2.png)
+
+GroceryList Selection and Deletion
+#![alt tag](Images/ListsSelectDelete.png)
+
+Hierarchical List for Item selection (Opened by Find Item Button in Base UI):
 #![alt tag](Images/HierArchicalList.png)
