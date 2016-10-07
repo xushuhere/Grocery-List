@@ -1,22 +1,12 @@
 # Use Case Model
 
-*This is the template for your use case model. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
-**Author**: \<person or team name\>
+**Author**: Team 16: Anshul Goel, Dwight Nelson, Shu Xu, Zakariya Ahmad
 
 ## 1 Use Case Diagram
 
-*This section should contain a use case diagram with all the actors and use cases for the system, suitably connected.*
 ##![alt tag](images/useCaseDiagram.png)
 
 ## 2 Use Case Descriptions
-
-*For each use case in the use case diagram, this section should contain a description, with the following elements:*
-
-- *Requirements: High-level description of what the use case must allow the user to do.*
-- *Pre-conditions: Conditions that must be true before the use case is run.*
-- *Post-conditions Conditions that must be true once the use case is run.*
-- *Scenarios: Sequence of events that characterize the use case. This part may include multiple scenarios, for normal, alternate, and exceptional event sequences. These scenarios may be expressed as a list of steps in natural language or as sequence diagrams.*
 
 **Use Case 1:** Create grocery list
 
@@ -77,7 +67,7 @@
 * Application prompts user to input quantity of item
 * User inputs quantity
 * User selects add 
-* A new item with the properties specified by the user is added to the selected grocery list.  
+* A new item with the properties specified by the user is added to the selected grocery list
 
 *Alternate Scenario:*
 
@@ -89,10 +79,126 @@
 * The user chooses to enter the item by its name
 * The application prompts the user with a list of items that are similar to the entered name
 * If one of the prompted items are what the user desired, the user selects that item
-* If none of the prompted items are what the user desired, the user selects an option for no match. 
+* If none of the prompted items are what the user desired, the user selects an option for no match 
 	* Application prompts user to specify item type for entered item
 	* User enters item type 
 * Application prompts user to input quantity of item
 * User inputs quantity
 * User selects add 
 * A new item with the properties specified by the user is added to the selected grocery list
+
+**Use Case 3:** Maintain items
+
+*Requirements:* This use case should allow the user to modify an item's quantity and remove and item from a list
+
+*Pre-conditions:*
+
+* There exists at least one grocery list, which contains at least one item
+
+*Post-conditions:* 
+
+* The appropriate modifications to the user specified item have been made and saved to the grocery list which contains it
+
+*Normal Scenario:*
+   
+* User opens application
+* User selects a grocery list that was previously created
+* User selects an item from the list  
+* Application prompts user to edit or delete
+* If user selects edit:
+	* Application prompts user to change quantity
+	* User changes quantity
+* If user selects delete:
+	* Application confirms that user wants to delete item
+	* User confirms
+	* The item is removed from the grocery list
+* User is returned to the grocery list view 
+
+**Use Case 4:** View grocery list
+
+*Requirements:* This use case should allow the user to view a specified grocery list and check off items as they attain them
+
+*Pre-conditions:*
+
+* There exists at least one grocery list, which contains at least one item
+
+*Post-conditions:* 
+
+* Items that the user has acquired and specified are checked off in the grocery list 
+
+*Normal Scenario:*
+   
+* User opens application
+* User selects a grocery list that was previously created
+* User scrolls to the item type of the item they are looking for
+* User identifies the item they need to acquire
+* If user has not acquired specified item, no changes are made
+* If user has acquired specified item, user checks off the item
+* User is returned to the grocery list view 
+
+**Use Case 5:** Maintain grocery lists
+
+*Requirements:* This use case should allow the user to modify or delete existing grocery lists
+
+*Pre-conditions:*
+
+* There exists at least one grocery list
+
+*Post-conditions:* 
+
+* User specified actions to grocery list have been made and saved
+
+*Normal Scenario:*
+   
+* User opens application
+* User is viewing list of all available grocery lists
+* Application has edit button available
+* User selects edit
+* Application prompts user to specifiy which list to edit
+* User selects a single grocery list
+* Application prompts user to rename list or delete list
+* If user selects rename list:
+	* User enters new name for grocery list
+	* User selects save
+* If user selects delete:
+	* Application confirms user wishes to delete specified list
+	* User confirms
+	* Grocery list is deleted
+* User is returned to the grocery list view 
+
+*Alternate Scenario:*
+   
+* User opens application
+* User is viewing list of all available grocery lists
+* Application has edit button available
+* User selects edit
+* Application prompts user to specifiy which list to edit
+* User selects a single grocery list
+* Application prompts user to rename list or delete list
+* If user selects rename list:
+	* User enters new name for grocery list
+	* User selects save
+* If user selects delete:
+	* Application confirms user wishes to delete specified list
+	* User selects cancel
+	* Grocery list is not deleted
+* User is returned to the grocery list view 
+
+*Alternate Scenario 2:*
+   
+* User opens application
+* User is viewing list of all available grocery lists
+* Application has edit button available
+* User selects edit
+* Application prompts user to specifiy which list to edit
+* User selects a single grocery list
+* Application prompts user to rename list or delete list
+* If user selects rename list:
+	* User does not enter new name for grocery list
+	* User selects save
+	* Grocery list maintains original list name
+* If user selects delete:
+	* Application confirms user wishes to delete specified list
+	* User confirms
+	* Grocery list is deleted
+* User is returned to the grocery list view 

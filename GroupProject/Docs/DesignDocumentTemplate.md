@@ -40,6 +40,8 @@
 
 *In the case of an OO design, the internal structure of a software component would typically be expressed as a UML class diagram that represents the static class structure for the component and their relationships.*
 
+#![alt tag](../Design-Team/images/design-team.png)
+
 ### 3.2 Other Diagrams
 
 *<u>Optionally</u>, you can decide to describe some dynamic aspects of your system using one or more behavioral diagrams, such as sequence and state diagrams.*
