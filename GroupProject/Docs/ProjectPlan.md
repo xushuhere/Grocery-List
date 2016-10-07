@@ -124,7 +124,7 @@ Zakariya will be the lead for the following deliverables and artifacts:
 - Lead non-functional requirements
 
 
-#### Roles of each team member can be used to align columns.
+#### Table. Roles of each team member in the project.
 
 | *Team Member*    | *Roles*                         |
 | :------------- |:----------------------------------:| 
