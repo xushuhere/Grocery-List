@@ -1,12 +1,7 @@
 # Design Document
-
-*This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
-**Author**: \<person or team name\>
+**Author**: \<Team 16\>
 
 ## 1 Design Considerations
-
-*The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
 
 ### 1.1 Assumptions
 
@@ -27,6 +22,8 @@
 ### 2.1 Component Diagram
 
 *This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
+#![alt tag](Images/ArchitectureComponent.png)
+
 
 ### 2.2 Deployment Diagram
 
@@ -48,4 +45,5 @@
 
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
-
+#![alt tag](Images/MockUp.png)
+#![alt tag](Images/HierArchicalList.png)
