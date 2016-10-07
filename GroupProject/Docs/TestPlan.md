@@ -37,12 +37,8 @@ This section should be the core of this document. You should provide a table of 
 
 
 |Purpose| Steps Performed|Expected Result|Actual Result||Status(Pass/Fail)|
-| -------------: |:-------------:| ------------- |:-------------:|------------:|
-|User should be able to create a grocery list|1: User clicks on add button
-2: A dialog opens where user is prompted to enter list name
-3: User enters List name and clicks create
-4: List gets created|
-List gets created|  |  |  |
+| -------------: |:---------------------------------:| ------------- |:-------------:|------------:|
+|User should be able to create a grocery list|1: User clicks on add button  2: A dialog opens where user is prompted to enter list name 3: User enters List name and clicks create  4: List gets created|List gets created|  |  |  |
 
 |User should be able to delete a grocery list|
 1: User clicks on delete list button
