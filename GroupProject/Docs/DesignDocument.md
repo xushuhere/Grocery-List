@@ -17,15 +17,16 @@
 
 **Hardware:**
 
-* Phone, not tablet 
+* Android phones
 * Minimum network capability (at least one)
-	* EDGE, HSPA, EV-DO, 802.11g, etc
+	* EDGE, HSPA, EV-DO, 802.11g
 * Minimum memory and storage
-	* 5mb? **(place holder)**
+	* Minimum 30mb of free storage to accomodate application and application data
 * Display
-	* less than 6 inch screen size 
-	* supported resolutions:
-	* 
+	* Less than 6 inch screen size 
+	* Supported resolutions: HDPI, XDPI, XXHDPI, XXXHDPI
+	* Touchscreen capabilities
+
 
 **Software**
 
