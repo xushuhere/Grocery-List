@@ -2,10 +2,13 @@
 **Author**: \<Team 16\>
 
 ## 1 Design Considerations
+The application is a single user end operated in an android system for grocery lists management. This application will be operated independently by each end user, and the database will be updated by both user and database administrators.
 
 ### 1.1 Assumptions
-
-*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
+The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes. The device has internet connections and will be able to pull remote data from database.
+- the user will have access to a Android 4.0+ smart phone
+- the parse.com data store will continue to operate through the use of the application
+- the security of this application is not required.
 
 ### 1.2 Constraints
 
