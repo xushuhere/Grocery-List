@@ -5,7 +5,7 @@
 The application is a single user end operated in an android system for grocery lists management. This application will be operated independently by each end user, and the database will be updated by both user and database administrators.
 
 ### 1.1 Assumptions
-The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes. The device has internet connections and will be able to pull remote data from database.
+The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes. The device has internet connections and will be able to pull remote data from a database server.
 - the user will have access to a Android 4.0+ smart phone
 - the parse.com data store will continue to operate through the use of the application
 - the security of this application is not required.
@@ -34,6 +34,8 @@ The users will be required to open and navigate the interface via their android 
 **Software**
 
 * The minimum software requirements for this application will be Android API Level 19. 
+* The Application will be developed using Java JDK 7
+* 
 
 
 ## 2 Architectural Design
@@ -42,13 +44,14 @@ The users will be required to open and navigate the interface via their android 
 
 ### 2.1 Component Diagram
 
-*This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
+The following diagram shows the overall system architecture and it's components. Our design encorporates a Three Tier architecture that decouples UI, Logic, and Data Storage components of the system. This helps improve system maintainability.
+
 #![alt tag](Images/ArchitectureComponent.png)
 
 
 ### 2.2 Deployment Diagram
 
-*This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
+The components of this application are all held on a single device. We anticipate that the database size will be small enough to be kept withing the system. A deployment Diagram is unnecessary in this case.
 
 ## 3 Low-Level Design
 
