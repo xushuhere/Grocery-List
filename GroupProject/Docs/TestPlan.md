@@ -1,6 +1,6 @@
 # **Test Plan**
 
-**Author**: TEAM 16
+**Author**: Team 16: Anshul Goel, Dwight Nelson, Shu Xu, Zakariya Ahmad
 
 ## **1 Testing Strategy**
 
