@@ -1,5 +1,3 @@
-<<<<<<< HEAD >>>>>>>
-=======
 # Extra Requirement Plan 
 **Author**: <Team 16> **Anshul Goel, Dwight Nelson, Shu Xu, and Zakariya Ahmad**
 
@@ -12,8 +10,6 @@ This document describes extra requirement plan for the software development proc
 ### Feedback system
 - The software should provide meaningful and helpful feedback in the case of misuse. A sever will be built to receive the error messages with the permission of users. These error messages allow the user to more easily debug the program.
 
-### Additional Skin and Themes
-- Additional Skin and Themes for the UI design will also be provided to alter the view of the software.
 
 ### Portability to Different Devices
 - The software is designed for android cell phone uses, but the probability to certain tablet devices should be also implemented.
@@ -28,4 +24,3 @@ This document describes extra requirement plan for the software development proc
 ### Usability 
 - User interface must be intuitive for usability purposes.  
 
->>>>>>> refs/remotes/origin/master
