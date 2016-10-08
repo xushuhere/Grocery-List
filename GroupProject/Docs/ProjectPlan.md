@@ -3,7 +3,7 @@
 
 ## 1 Introduction
 
-This document describes the software development process (CS6300) for Team 16  of the Fall 2016. The project is for a custom android application that manages grocery lists and items that the user wants to buy at a grocery store. 
+This document describes the project plan for software development process (Team 16, Fall 2016). The project is for a custom android application that manages grocery lists and items that the user wants to buy at a grocery store. 
 
 ## 2 Process Description
 
@@ -40,7 +40,7 @@ The grocery list manager will be implemented using the Rational Unified Process 
 * *Entrance criteria: UML diagram designed, use case, database design, and test plan.*
 * *Exit criteria: the main functions of the application is finished with reasonable outputs, very few bugs, and maintainability.*
 
-##### *Develop Prototype*
+##### *Develop prototype*
 * *Activity description: Determine basic requirements including the input and output information desired, user interfaces, examine the prototype inside the team and provide feedback on additions or changes.*
 * *Entrance criteria: UML design and main use cases are provided.*
 * *Exit criteria: Revise and Enhance the Prototype.*
