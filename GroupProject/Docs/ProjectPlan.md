@@ -79,6 +79,8 @@ The grocery list manager will be implemented using the Rational Unified Process 
 * *Activity description: After the system testing, the bugs from system testing will be fixed and expected behavior /artifact are as expected.*
 * *Entrance criteria: system testing*
 * *Exit criteria:system bugs are fixed.*
+
+
 ##### *Review and test Beta release*
 * *Activity description: the team will review the modified version of the application. The system should be working with most assessment, the main action and the functional requirements are met. Multi-iterative step review to test the behavior of the software.*
 * *Entrance criteria: system bugs are fixed after alpha release*
@@ -130,7 +132,7 @@ Zakariya will be the lead for the following deliverables and artifacts:
 | *Team Member*    | *Roles*                         |
 | :------------- |:----------------------------------:| 
 | Anshul Goel    | Graphic design, Test plan developer  |
-| Dwight Nelson  | UI designe, Software architect designer|  
+| Dwight Nelson  | UI design, Software architect designer|  
 | Shu Xu         | System test, Database lead |    
 | Zakariya Ahmad | Project manager, Use case developer |   
 
