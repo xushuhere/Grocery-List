@@ -15,6 +15,23 @@
 
 *Describe the hardware and software that the system must operate in and interact with.*
 
+**Hardware:**
+
+* Phone, not tablet 
+* Minimum network capability (at least one)
+	* EDGE, HSPA, EV-DO, 802.11g, etc
+* Minimum memory and storage
+	* 5mb? **(place holder)**
+* Display
+	* less than 6 inch screen size 
+	* supported resolutions:
+	* 
+
+**Software**
+
+* The minimum software requirements for this application will be Android API Level 19. 
+
+
 ## 2 Architectural Design
 
 *The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
