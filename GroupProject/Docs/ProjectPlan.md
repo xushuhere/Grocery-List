@@ -101,30 +101,31 @@ Our team consists of four team members. Every member will be in charge of severa
 
 ### Anshul Goel
 Anshul will be the lead for the following deliverables and artifacts:
-- Graphic design of the software
-- Development of use case model  
+- *Graphic design of the software*
+- *Test plan documents and diagrams*
+
 
 
 ### Dwight Nelson
 Dwight will be the lead for the following deliverables and artifacts:
-- User interface design
-- Software architect design
+- *User interface design*
+- *Software architect design*
 
 ### Shu Xu
 Shu will be the lead for the following deliverables and artifacts:
-- Database implementation
-- System testing and implementation
-- Implement supplementary requirements
+- *Database implementation*
+- *System testing and implementation*
+- *Implement supplementary requirements*
 
 
 ### Zakariya Ahmad
 Zakariya will be the lead for the following deliverables and artifacts:
-- Test plan documents and diagrams
-- Track goals and deliverables of each phase
-- Lead non-functional requirements
+- *Track goals and deliverables of each phase*
+- *Development of use case model* 
+- *Lead non-functional requirements*
 
 
-#### Table. Roles of each team member in the project.
+#### Table. *Roles of each team member in the project*
 
 | *Team Member*    | *Roles*                         |
 | :------------- |:----------------------------------:| 
