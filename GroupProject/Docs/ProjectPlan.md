@@ -128,8 +128,8 @@ Zakariya will be the lead for the following deliverables and artifacts:
 
 | *Team Member*    | *Roles*                         |
 | :------------- |:----------------------------------:| 
-| Anshul Goel    | Graphic design, Use case developer  |
+| Anshul Goel    | Graphic design, Test plan developer  |
 | Dwight Nelson  | UI designe, Software architect designer|  
 | Shu Xu         | System test, Database lead |    
-| Zakariya Ahmad | Project manager, Test planer |   
+| Zakariya Ahmad | Project manager, Use case developer |   
 
