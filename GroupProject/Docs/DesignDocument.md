@@ -1,23 +1,26 @@
 # Design Document
-**Author**: **Anshul Goel, Dwight Nelson, Shu Xu, and Zakariya Ahmad**
+**Author**: \<Team 16\>
 
 ## 1 Design Considerations
 The application is a single user end operated in an android system for grocery lists management. This application will be operated independently by each end user, and the database will be updated by both user and database administrators.
 
 ### 1.1 Assumptions
-The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes and typing in words and numbers via touch keys. The device has internet connections and will be able to pull remote data from a database server.
-- the user will have access to a Android 4.0+ smart phone
+The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes. The device has internet connections and will be able to pull remote data from a database server.
+- the user will have access to a Android 4.0+ smart phone or tablet
+- the user is capable of using common Android 4.0+ UI components
 - the parse.com data store will continue to operate through the use of the application
-- the security of this application is not required
-- no legal considerations are constraining for this application
+- the security of this application is not required.
 
 ### 1.2 Constraints
-- the Programming language of the development is JAVA
-- Operating system or platforms supported for the application is Android 4.0 +
-- the platform for the development of this application is  Android Studio 2.0 and above
-- the whole development of this application is about 80 hours and about 300 lines of code
+
+Constraints that have significant impact on the system design are:
+* Storage Space: The design must accomodate application and application data
+* Display Size: Lists and user capabilities must fit within available screen space
+* 
 
 ### 1.3 System Environment
+
+*Describe the hardware and software that the system must operate in and interact with.*
 
 **Hardware:**
 
@@ -31,40 +34,40 @@ The users will be required to open and navigate the interface via their android 
 	* Supported resolutions: HDPI, XDPI, XXHDPI, XXXHDPI
 	* Touchscreen capabilities
 
+
 **Software**
 
 * The minimum software requirements for this application will be Android API Level 19. 
 * The Application will be developed using Java JDK 7
-* 
 
 
 ## 2 Architectural Design
 
-Our design encorporates a Three Tier architecture that decouples UI, Logic, and Data Storage components of the system. 
-
 ### 2.1 Component Diagram
 
-The following diagram shows the overall system architecture and it's components. A Three Tier architecture that decouples UI, Logic, and Data Storage components of the system helps improve system maintainability.
+The following diagram shows the overall system architecture and it's components. Our design encorporates a Three Tier architecture that decouples UI, Logic, and Data Storage components of the system. This helps improve system maintainability.
 
 #![alt tag](Images/ArchitectureComponent.png)
 
 
 ### 2.2 Deployment Diagram
 
-The components of this application are all held on a single device. We anticipate that the database size will be small enough to be kept withing the system. A deployment Diagram is unnecessary in this case.
+The components created in the design of this application are all held on a single device. Any part of the system that doesn't reside on the Android device is third party software that is not designed her. A deployment Diagram is unnecessary in this case.
 
 ## 3 Low-Level Design
 
-*Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
+The following sections describe the implemented functions of the system and how they work together. The class diagram sections shows each class, its attriutes, and functions. It also describes how each class fits into our architecture. In the other diagrams section we've added a sequence diagram to show the steps necessary to add an item to a list from a Hierarchy.
 
 ### 3.1 Class Diagram
 
-*In the case of an OO design, the internal structure of a software component would typically be expressed as a UML class diagram that represents the static class structure for the component and their relationships.*
+How our classes fit into our architecture:
+* Presentation Layer: Application, HierarchicalList, SpecifySearch
+* Logic Layer: GroceryList, Item, Database(class)
+* Database Layer: None (This layer contains the physical data and the server that provides the data) 
 
 #![alt tag](../Design-Team/images/design-team.png)
 
 ### 3.2 Other Diagrams
-* 
 
 ## 4 User Interface Design
 
