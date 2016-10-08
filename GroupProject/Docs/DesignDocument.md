@@ -1,22 +1,23 @@
 # Design Document
-**Author**: \<Team 16\>
+**Author**: **Anshul Goel, Dwight Nelson, Shu Xu, and Zakariya Ahmad**
 
 ## 1 Design Considerations
 The application is a single user end operated in an android system for grocery lists management. This application will be operated independently by each end user, and the database will be updated by both user and database administrators.
 
 ### 1.1 Assumptions
-The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes. The device has internet connections and will be able to pull remote data from a database server.
+The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes and typing in words and numbers via touch keys. The device has internet connections and will be able to pull remote data from a database server.
 - the user will have access to a Android 4.0+ smart phone
 - the parse.com data store will continue to operate through the use of the application
-- the security of this application is not required.
+- the security of this application is not required
+- no legal considerations are constraining for this application
 
 ### 1.2 Constraints
-
-*Describe any constraints on the system that have a significant impact on the design of the system.*
+- the Programming language of the development is JAVA
+- Operating system or platforms supported for the application is Android 4.0 +
+- the platform for the development of this application is  Android Studio 2.0 and above
+- the whole development of this application is about 80 hours and about 300 lines of code
 
 ### 1.3 System Environment
-
-*Describe the hardware and software that the system must operate in and interact with.*
 
 **Hardware:**
 
@@ -30,7 +31,6 @@ The users will be required to open and navigate the interface via their android 
 	* Supported resolutions: HDPI, XDPI, XXHDPI, XXXHDPI
 	* Touchscreen capabilities
 
-
 **Software**
 
 * The minimum software requirements for this application will be Android API Level 19. 
@@ -40,11 +40,11 @@ The users will be required to open and navigate the interface via their android 
 
 ## 2 Architectural Design
 
-*The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
+Our design encorporates a Three Tier architecture that decouples UI, Logic, and Data Storage components of the system. 
 
 ### 2.1 Component Diagram
 
-The following diagram shows the overall system architecture and it's components. Our design encorporates a Three Tier architecture that decouples UI, Logic, and Data Storage components of the system. This helps improve system maintainability.
+The following diagram shows the overall system architecture and it's components. A Three Tier architecture that decouples UI, Logic, and Data Storage components of the system helps improve system maintainability.
 
 #![alt tag](Images/ArchitectureComponent.png)
 
@@ -64,8 +64,7 @@ The components of this application are all held on a single device. We anticipat
 #![alt tag](../Design-Team/images/design-team.png)
 
 ### 3.2 Other Diagrams
-
-*<u>Optionally</u>, you can decide to describe some dynamic aspects of your system using one or more behavioral diagrams, such as sequence and state diagrams.*
+* 
 
 ## 4 User Interface Design
 
