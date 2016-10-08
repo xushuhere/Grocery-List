@@ -4,7 +4,7 @@
 
 ## 1 Use Case Diagram
 
-#![alt tag](images/useCaseDiagram.png)
+#![alt tag](Images/useCaseDiagram.png)
 
 ## 2 Use Case Descriptions
 
