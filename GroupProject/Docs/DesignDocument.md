@@ -1,5 +1,5 @@
 # Design Document
-**Author**: \<Team 16\>
+**Author**: Team 16: Anshul Goel, Dwight Nelson, Shu Xu, Zakariya Ahmad
 
 ## 1 Design Considerations
 The application is a single user end operated in an android system for grocery lists management. This application will be operated independently by each end user, and the database will be updated by both user and database administrators.
