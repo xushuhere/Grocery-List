@@ -101,26 +101,24 @@ The grocery list manager will be implemented using the Rational Unified Process 
 Our team consists of four team members. Every member will be in charge of several specific aspects of the projects and also participate in peer review process of each deliverable. Weekly meeting and instant messaging are delivered via google hangout and slack. The documents are reviewed through google docs and GitHub, and codes are share via GitHub.
 
 
-### Anshul Goel
+#### Anshul Goel
 Anshul will be the lead for the following deliverables and artifacts:
 - *Graphic design of the software*
 - *Test plan documents and diagrams*
 
 
-
-### Dwight Nelson
+#### Dwight Nelson
 Dwight will be the lead for the following deliverables and artifacts:
 - *User interface design*
 - *Software architect design*
 
-### Shu Xu
+#### Shu Xu
 Shu will be the lead for the following deliverables and artifacts:
 - *Database implementation*
 - *System testing and implementation*
 - *Implement supplementary requirements*
 
-
-### Zakariya Ahmad
+#### Zakariya Ahmad
 Zakariya will be the lead for the following deliverables and artifacts:
 - *Track goals and deliverables of each phase*
 - *Development of use case model* 
