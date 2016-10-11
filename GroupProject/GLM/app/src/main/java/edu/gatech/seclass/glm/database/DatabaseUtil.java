@@ -98,6 +98,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
                 allItems.add(item);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return allItems;
 
     }
@@ -107,13 +108,8 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // select query
-        String sql = "";
-        String sql2 = "";
-        sql += "SELECT * FROM " + TABLE_ALL_ITMES;
-        sql += " WHERE " + ITEM_NAME + " LIKE '" + searchString + "%'";
-
-        sql2 += "SELECT * FROM " + TABLE_ALL_ITMES;
-        sql2 += " WHERE " + ITEM_NAME + " LIKE '%" + searchString + "%'";
+        String sql = "SELECT * FROM " + TABLE_ALL_ITMES + " WHERE " + ITEM_NAME + " LIKE '" + searchString + "%'";
+        String sql2 =  "SELECT * FROM " + TABLE_ALL_ITMES + " WHERE " + ITEM_NAME + " LIKE '%" + searchString + "%'";
 
         Cursor cursor = db.rawQuery(sql, null);
 
