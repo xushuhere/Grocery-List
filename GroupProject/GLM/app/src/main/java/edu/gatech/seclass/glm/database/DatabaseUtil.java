@@ -10,11 +10,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import edu.gatech.seclass.glm.models.GroceryList;
-import edu.gatech.seclass.glm.models.Item;
+import edu.gatech.seclass.glm.models.IteminData;
+import edu.gatech.seclass.glm.models.IteminList;
 
 /**
  * Created by Anshul on 10/11/16.
+ * updated by Shu on 10/11/16.
  */
 
 public class DatabaseUtil extends SQLiteOpenHelper {
@@ -22,23 +25,23 @@ public class DatabaseUtil extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "glm_team_16";
 
-    public static final String TABLE_ALL_ITMES = "all_items";
-    public static final String TABLE_GROCERY_LISTS = "grocery_lists";
-    public static final String TABLE_GROCERY_LIST_ITEMS = "grocery_list_items";
+    private static final String TABLE_ALL_ITMES = "all_items";
+    private static final String TABLE_GROCERY_LISTS = "grocery_lists";
+    private static final String TABLE_GROCERY_LIST_ITEMS = "grocery_list_items";
 
 
-    public static final String USERNAME = "username";
-    public static final String GROCERY_LIST_NAME = "grocery_list_name";
-    public static final String GROCERY_LIST_ID = "grocery_list_id";
+    private static final String USERNAME = "username";
+    private static final String GROCERY_LIST_NAME = "grocery_list_name";
+    private static final String GROCERY_LIST_ID = "grocery_list_id";
 
-    public static final String ITEM_ID = "item_id";
-    public static final String ITEM_NAME = "item_name";
-    public static final String ITEM_TYPE = "item_type";
-    public static final String ITEM_QUANTITY = "item_quantity";
-    public static final String ITEM_QUANTITY_UNIT = "item_quanity_unit";
+    private static final String ITEM_ID = "item_id";
+    private static final String ITEM_NAME = "item_name";
+    private static final String ITEM_TYPE = "item_type";
+    private static final String ITEM_QUANTITY = "item_quantity";
+    private static final String ITEM_QUANTITY_UNIT = "item_quanity_unit";
 
-    public static final String IS_CHECKED = "is_checked";
-    Context context;
+    private static final String IS_CHECKED = "is_checked";
+    private Context context;
 
     public DatabaseUtil(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -78,8 +81,9 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public List<Item> getAllItemsFromDatabase(){
-        List<Item> allItems = new ArrayList<>();
+    // get all items from the database method
+    public List<IteminData> getAllItemsFromDatabase(){
+        List<IteminData> allItems = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         String getAllQuery = "SELECT * FROM " + TABLE_ALL_ITMES ;
@@ -88,7 +92,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Item item = new Item();
+                IteminData item = new IteminData();
                 item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                 item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
                 allItems.add(item);
@@ -98,8 +102,8 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
     }
 
-    public List<Item> getSimilarItemsFromDatabase(String searchString){
-        List<Item> allItems = new ArrayList<>();
+    public List<IteminData> getSimilarItemsFromDatabase(String searchString){
+        List<IteminData> allItems = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         // select query
@@ -115,7 +119,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Item item = new Item();
+                IteminData item = new IteminData();
                 item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                 item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
                 allItems.add(item);
@@ -128,7 +132,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
             if (cursor.moveToFirst()) {
                 do {
-                    Item item = new Item();
+                    IteminData item = new IteminData();
                     item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                     item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
                     allItems.add(item);
@@ -141,8 +145,8 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
     }
 
-    public List<Item> getAllItemsInGroceryList(String grocery_list_id){
-        List<Item> allItems = new ArrayList<>();
+    public List<IteminList> getAllItemsInGroceryList(String grocery_list_id){
+        List<IteminList> allItems = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         String getAllQuery = "SELECT * FROM " + TABLE_GROCERY_LIST_ITEMS + " WHERE " + GROCERY_LIST_ID + " = '" + grocery_list_id + "'" + " ORDER BY " + ITEM_TYPE;
@@ -151,7 +155,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Item item = new Item();
+                IteminList item = new IteminList();
                 item.setId(cursor.getString(cursor.getColumnIndex(ITEM_ID)));
                 item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                 item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
@@ -166,6 +170,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
                 allItems.add(item);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return allItems;
     }
 
@@ -202,6 +207,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
                 allLists.add(item);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return allLists;
     }
 
@@ -215,7 +221,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         db.insert(TABLE_GROCERY_LISTS, null, values);
     }
 
-    public void addItemToGroceryList(Item item, String grocery_list_id) {
+    public void addItemToGroceryList(IteminList item, String grocery_list_id) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -224,7 +230,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         values.put(ITEM_TYPE, item.getType());
         values.put(ITEM_QUANTITY, item.getQuantity());
         values.put(ITEM_QUANTITY_UNIT, item.getQuantityUnit());
-        if(item.isChecked()){
+        if(item.getIsChecked()){
             values.put(IS_CHECKED, 1);
         }else{
             values.put(IS_CHECKED, 0);
@@ -234,7 +240,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
     }
 
 
-    public void updateItemInGroceryList(Item item) {
+    public void updateItemInGroceryList(IteminList item) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -243,7 +249,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         values.put(ITEM_TYPE, item.getType());
         values.put(ITEM_QUANTITY, item.getQuantity());
         values.put(ITEM_QUANTITY_UNIT, item.getQuantityUnit());
-        if(item.isChecked()){
+        if(item.getIsChecked()){
             values.put(IS_CHECKED, 1);
         }else{
             values.put(IS_CHECKED, 0);
@@ -253,7 +259,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteItemInGroceryList(Item item) {
+    public void deleteItemInGroceryList(IteminList item) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_GROCERY_LIST_ITEMS, ITEM_ID + " = ? ", new String[]{String.valueOf(item.getId())});

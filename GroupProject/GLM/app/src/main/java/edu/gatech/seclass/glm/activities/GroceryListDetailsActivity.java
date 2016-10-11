@@ -18,11 +18,12 @@ import edu.gatech.seclass.glm.R;
 import edu.gatech.seclass.glm.adapters.GroceryListItemAdapter;
 import edu.gatech.seclass.glm.database.DatabaseUtil;
 import edu.gatech.seclass.glm.models.GroceryList;
-import edu.gatech.seclass.glm.models.Item;
+//import edu.gatech.seclass.glm.models.IteminData;
+import edu.gatech.seclass.glm.models.IteminList;
 
 public class GroceryListDetailsActivity extends AppCompatActivity implements View.OnClickListener{
     GroceryList groceryList;
-    List<Item> items;
+    List<IteminList> items;
     DatabaseUtil dataHandler;
     GroceryListItemAdapter adapter;
     private ListView mListItemsListView;
@@ -81,7 +82,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         saveItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Item item = new Item();
+                IteminList item = new IteminList();
                 item.setName(newItemNameEditText.getText().toString());
                 item.setType(newItemTypeEditText.getText().toString());
                 item.setQuantity(newItemQuantityEditText.getText().toString());
@@ -103,7 +104,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         dialog.show();
     }
 
-    public void markItemAsCheckedUnchecked(Item item, boolean isChecked) {
+    public void markItemAsCheckedUnchecked(IteminList item, boolean isChecked) {
         item.setChecked(isChecked);
         dataHandler.updateItemInGroceryList(item);
         items.clear();
@@ -111,7 +112,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         adapter.notifyDataSetChanged();
     }
 
-    public void deleteItem(Item item) {
+    public void deleteItem(IteminList item) {
         dataHandler.deleteItemInGroceryList(item);
         items.clear();
         items.addAll(dataHandler.getAllItemsInGroceryList(groceryList.getId()));
@@ -120,7 +121,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
 
     public void checkAll() {
         for(int i=0; i<items.size(); i++){
-            Item item = items.get(i);
+            IteminList item = items.get(i);
             item.setChecked(true);
             dataHandler.updateItemInGroceryList(item);
         }
@@ -131,7 +132,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
 
     public void uncheckAll() {
         for(int i=0; i<items.size(); i++){
-            Item item = items.get(i);
+            IteminList item = items.get(i);
             item.setChecked(false);
             dataHandler.updateItemInGroceryList(item);
         }

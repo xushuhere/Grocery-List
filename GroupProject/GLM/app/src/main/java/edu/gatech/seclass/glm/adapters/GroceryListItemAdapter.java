@@ -14,7 +14,7 @@ import java.util.List;
 
 import edu.gatech.seclass.glm.R;
 import edu.gatech.seclass.glm.activities.GroceryListDetailsActivity;
-import edu.gatech.seclass.glm.models.Item;
+import edu.gatech.seclass.glm.models.IteminList;
 
 import static edu.gatech.seclass.glm.R.id.iv_remove_item;
 
@@ -27,7 +27,7 @@ public class GroceryListItemAdapter extends ArrayAdapter{
     private Context mContext;
 
 
-    public GroceryListItemAdapter(Context context, List<Item> items) {
+    public GroceryListItemAdapter(Context context, List<IteminList> items) {
         super(context,0,items);
         mInflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -66,14 +66,14 @@ public class GroceryListItemAdapter extends ArrayAdapter{
             holder= (GroceryListItemAdapter.ViewHolder) convertView.getTag();
         }
 
-        final Item item= (Item) getItem(position);
+        final IteminList item= (IteminList) getItem(position);
 
         holder.mGroceryListItemNameTextView.setText(item.getName());
         holder.mGroceryListItemTypeTextView.setText(item.getType());
         holder.mGroceryListItemQuantityTextView.setText(item.getQuantity());
         holder.mGroceryListItemQuantityUnitTextView.setText(item.getQuantityUnit());
 
-        if(item.isChecked()){
+        if(item.getIsChecked()){
             holder.mItemCheckedCheckBox.setChecked(true);
         }else{
             holder.mItemCheckedCheckBox.setChecked(false);
@@ -85,7 +85,7 @@ public class GroceryListItemAdapter extends ArrayAdapter{
         holder.mRemoveItemImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Item selectedItem = (Item) v.getTag();
+                IteminList selectedItem = (IteminList) v.getTag();
                 ((GroceryListDetailsActivity)getContext()). deleteItem(selectedItem);
             }
         });
@@ -93,7 +93,7 @@ public class GroceryListItemAdapter extends ArrayAdapter{
         holder.mItemCheckedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Item selectedItem = (Item) buttonView.getTag();
+                IteminList selectedItem = (IteminList) buttonView.getTag();
                 ((GroceryListDetailsActivity)getContext()). markItemAsCheckedUnchecked(selectedItem, isChecked);
             }
         });
