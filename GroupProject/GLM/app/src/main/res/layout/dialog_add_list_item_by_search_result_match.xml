@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="300dp"
-android:layout_height="300dp"
+android:layout_height="600dp"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:background="@color/white"
 android:orientation="vertical">
@@ -10,29 +10,35 @@ android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.39"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="Add a new List"
+        android:text="Matched results"
         android:textColor="#fff"
         android:background="@color/colorPrimary"
         android:textSize="22sp" />
 
-
-    <Button
-        android:text="Search name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_name_search"
-        android:layout_weight="0.19" />
-
-    <Button
-        android:id="@+id/btn_Hierarchical_list"
-        android:layout_weight="0.60"
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Hierarchical List"
+        android:id="@+id/spinner"
+        android:layout_weight="0.24" />
+
+
+    <Button
+        android:id="@+id/btn_search_item"
+        android:layout_weight="0.25"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="add to list"
         />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/placeholder3"
+        android:layout_weight="0.59" />
 
 </LinearLayout>
 
