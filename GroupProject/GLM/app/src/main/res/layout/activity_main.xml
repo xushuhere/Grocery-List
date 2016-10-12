@@ -12,7 +12,7 @@
         android:text="Grocery List Manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/grocery list manager"
+        android:id="@+id/grocery_list_manager"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/white"
         android:textSize="30sp"
@@ -53,6 +53,6 @@
         android:textColor="@android:color/white"
         android:layout_marginTop="27dp"
         android:layout_width="360dp"
-        android:layout_below="@+id/grocery list manager"
+        android:layout_below="@+id/grocery_list_manager"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
