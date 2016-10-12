@@ -65,7 +65,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             db.execSQL(CREATE_TABLE_GROCERY_LISTS);
             db.execSQL(CREATE_TABLE_GROCERY_LIST_ITEMS);
 
-            // Todo populate all items table
+            // TODO populate all items table
 
         } catch (SQLException e) {
             e.printStackTrace();
