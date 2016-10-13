@@ -20,23 +20,34 @@ After selecting a user profile a screen is displayed that contains the selected 
 To create a list on this screen the user is given an "Add List" button at the bottom of the screen.
 
 >*ADD (Add List Button) SCREENSHOT HERE*
+
 >*ADD (Name New List Screen) SCREENSHOT HERE*
 
 :scroll: _STEPS_
-* STEP 1: Select Add List
-* STEP 2: Enter a name for the grocery list
+* STEP 1: Select Add List.
+* STEP 2: Enter a name for the grocery list.
 
 ### 3.2 Renaming Lists
-After a list is added to the profile, there is an option to rename the list by selecting the pencil icon button
+After a list is added to the profile, there is an option to rename the list by selecting the pencil icon button.
 
 >*ADD (Pencil Icon) SCREENSHOT HERE*
+
 >*ADD (Rename List Screen) SCREENSHOT HERE*
 
 :scroll: _STEPS_
-* STEP 1: Select Pencil Icon
-* STEP 2: Enter a name for the grocery list
+* STEP 1: Select Pencil Icon.
+* STEP 2: Enter a name for the grocery list.
 
 ### 3.3 Removing Lists
+After a list is added to the profile, there is also an option to remove the list by selecting the X button.
+
+>*ADD (x button) SCREENSHOT HERE*
+
+>*ADD (list removed) SCREENSHOT HERE*
+
+:scroll: _STEPS_
+* STEP 1: Select X button.
+* STEP 2: Observe that the selected list has been removed.
 
 ## 4 Working With Grocery List Items
 
