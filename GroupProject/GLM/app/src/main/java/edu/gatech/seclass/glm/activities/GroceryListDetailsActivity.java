@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -246,9 +248,36 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
     }
 
     public void addItemByType(){
+        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+        dialog.setContentView(R.layout.dialog_search_by_type_parent);
+        ListView searchedItemsListView = (ListView) dialog.findViewById(R.id.lv_searchedItems);
 
+        final List<String> results = dataHandler.getAllItemsTypesFromDatabase();
+
+        ArrayAdapter<String> searchInAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.custom_list_item_text, results);
+        searchedItemsListView.setAdapter(searchInAdapter);
+
+        searchedItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                addItemByTypeSecondDialog(results.get(position).toString());
+            }
+        });
+
+        dialog.show();
     }
 
+
+    public void addItemByTypeSecondDialog(String type){
+        dialog.dismiss();
+        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+        dialog.setContentView(R.layout.dialog_search_by_type_child);
+        ListView searchedItemsListView = (ListView) dialog.findViewById(R.id.lv_searchedItems);
+        List<IteminData> results = dataHandler.getItemsByTypeFromDatabase(type);
+        SearchListItemAdapter searchAdapter = new SearchListItemAdapter(GroceryListDetailsActivity.this, results);
+        searchedItemsListView.setAdapter(searchAdapter);
+        dialog.show();
+    }
 
     public void markItemAsCheckedUnchecked(IteminList item, boolean isChecked) {
         item.setChecked(isChecked);

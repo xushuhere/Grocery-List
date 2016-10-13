@@ -100,6 +100,48 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
     }
 
+    public List<String> getAllItemsTypesFromDatabase(){
+        List<String> allTypes = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String getAllQuery = "SELECT DISTINCT(" + ITEM_TYPE + ") FROM " + TABLE_ALL_ITEMS ;
+
+        Cursor cursor = db.rawQuery(getAllQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                String type = cursor.getString(cursor.getColumnIndex(ITEM_TYPE));
+                allTypes.add(type);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return allTypes;
+
+    }
+
+
+    public List<IteminData> getItemsByTypeFromDatabase(String type){
+        List<IteminData> allItems = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String getAllQuery = "SELECT * FROM " + TABLE_ALL_ITEMS + " WHERE " + ITEM_TYPE + " ='" + type + "'";
+
+        Cursor cursor = db.rawQuery(getAllQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                IteminData item = new IteminData();
+                item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
+                item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
+                item.setQuantityUnit(cursor.getString(cursor.getColumnIndex(ITEM_QUANTITY_UNIT)));
+                allItems.add(item);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return allItems;
+
+    }
+
     public List<IteminData> getSimilarItemsFromDatabase(String searchString){
         List<IteminData> allItems = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
