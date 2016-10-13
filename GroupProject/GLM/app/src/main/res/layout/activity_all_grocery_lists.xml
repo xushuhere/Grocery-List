@@ -28,6 +28,7 @@
             android:text="Add List"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            style="@style/buttonStyle"
             android:layout_weight="1"/>
     </LinearLayout>
 

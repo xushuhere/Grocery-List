@@ -4,6 +4,16 @@
     android:background="@color/white"
     android:layout_height="400dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Select Type"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/white" />
+
+
     <ListView
         android:layout_width="match_parent"
         android:layout_weight="4"
