@@ -137,14 +137,16 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
     public void addItemByName(){
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
         dialog.setContentView(R.layout.dialog_search_by_name);
-        EditText searchBoxEditText = (EditText) dialog.findViewById(R.id.ed_searchBox);
+        final EditText searchBoxEditText = (EditText) dialog.findViewById(R.id.ed_searchBox);
         Button addItemButton = (Button) dialog.findViewById(R.id.btn_add_item);
         final ListView searchedItemsListView = (ListView) dialog.findViewById(R.id.lv_searchedItems);
 
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                IteminData itemInData = new IteminData();
+                itemInData.setName(searchBoxEditText.getText().toString());
+                itemSelected(itemInData);
             }
         });
 
@@ -178,17 +180,19 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.ed_new_item_type);
         final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
         final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity_unit);
+        Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
+        Button saveAndAddItemButton = (Button) dialog.findViewById(R.id.btn_save_and_add_item);
         if(item.getName() != null && !item.getName().isEmpty()){
             newItemNameEditText.setText(item.getName());
         }
         if(item.getType() != null && !item.getType().isEmpty()){
             newItemTypeEditText.setText(item.getType());
+        }else{
+            saveAndAddItemButton.setVisibility(View.VISIBLE);
         }
         if(item.getQuantityUnit() != null && !item.getQuantityUnit().isEmpty()){
             newItemQuantityUnitEditText.setText(item.getQuantityUnit());
         }
-
-        Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
 
         saveItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,13 +211,38 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
                 items.clear();
                 items.addAll(dataHandler.getAllItemsInGroceryList(groceryList.getId()));
                 adapter.notifyDataSetChanged();
-
             }
         });
 
+        saveAndAddItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IteminList item = new IteminList();
+                IteminData itemForDB = new IteminData();
+                item.setName(newItemNameEditText.getText().toString());
+                item.setType(newItemTypeEditText.getText().toString());
+                item.setQuantity(newItemQuantityEditText.getText().toString());
+                item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
+                item.setChecked(false);
+                item.setId(UUID.randomUUID().toString().replace("-", ""));
+
+                itemForDB.setName(item.getName());
+                itemForDB.setType(item.getType());
+                itemForDB.setQuantityUnit(item.getQuantityUnit());
+
+                dataHandler.addItemToGroceryList(item, groceryList.getId());
+                dataHandler.addItemToDatabase(itemForDB);
+                dialog.dismiss();
+
+                items.clear();
+                items.addAll(dataHandler.getAllItemsInGroceryList(groceryList.getId()));
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+
         dialog.setCancelable(true);
         dialog.show();
-
     }
 
     public void addItemByType(){

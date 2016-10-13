@@ -285,6 +285,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(ITEM_NAME, item.getName());
         values.put(ITEM_TYPE, item.getType());
+        values.put(ITEM_QUANTITY_UNIT, item.getQuantityUnit());
         db.insert(TABLE_ALL_ITEMS, null, values);
     }
 
