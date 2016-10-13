@@ -47,6 +47,7 @@ public class AllGroceryListsActivity extends AppCompatActivity {
         }
 
         groceryLists = new ArrayList<>();
+        groceryLists = new ArrayList<>();
         dataHandler = new DatabaseUtil(getApplicationContext());
 
         groceryLists.addAll(dataHandler.getGroceryListsForUser(user));
@@ -63,7 +64,7 @@ public class AllGroceryListsActivity extends AppCompatActivity {
 
     public void addListDialog(final String user){
         dialog = new Dialog(AllGroceryListsActivity.this, R.style.CustomDialogTheme);
-        dialog.setContentView(R.layout.dialog_add_list);
+        dialog.setContentView(R.layout.dialog_rename_list);
         final EditText newListNameEditText = (EditText) dialog.findViewById(R.id.ed_new_list_name);
         Button saveListButton = (Button) dialog.findViewById(R.id.btn_save_list);
 
