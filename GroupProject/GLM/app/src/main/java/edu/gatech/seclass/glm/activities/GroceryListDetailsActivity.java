@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,10 +18,13 @@ import java.util.UUID;
 
 import edu.gatech.seclass.glm.R;
 import edu.gatech.seclass.glm.adapters.GroceryListItemAdapter;
+import edu.gatech.seclass.glm.adapters.SearchListItemAdapter;
 import edu.gatech.seclass.glm.database.DatabaseUtil;
 import edu.gatech.seclass.glm.models.GroceryList;
-//import edu.gatech.seclass.glm.models.IteminData;
+import edu.gatech.seclass.glm.models.IteminData;
 import edu.gatech.seclass.glm.models.IteminList;
+
+//import edu.gatech.seclass.glm.models.IteminData;
 
 public class GroceryListDetailsActivity extends AppCompatActivity implements View.OnClickListener{
     GroceryList groceryList;
@@ -70,13 +75,119 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
 
     }
 
-    public void addListDialog(final GroceryList groceryList){
+//    public void addListDialog(final GroceryList groceryList){
+//        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+//        dialog.setContentView(R.layout.dialog_add_list_item);
+//        final EditText newItemNameEditText = (EditText) dialog.findViewById(R.id.ed_new_item_name);
+//        final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.ed_new_item_type);
+//        final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
+//        final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity_unit);
+//        Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
+//
+//        saveItemButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                IteminList item = new IteminList();
+//                item.setName(newItemNameEditText.getText().toString());
+//                item.setType(newItemTypeEditText.getText().toString());
+//                item.setQuantity(newItemQuantityEditText.getText().toString());
+//                item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
+//                item.setChecked(false);
+//                item.setId(UUID.randomUUID().toString().replace("-", ""));
+//
+//                dataHandler.addItemToGroceryList(item, groceryList.getId());
+//                dialog.dismiss();
+//
+//                items.clear();
+//                items.addAll(dataHandler.getAllItemsInGroceryList(groceryList.getId()));
+//                adapter.notifyDataSetChanged();
+//
+//            }
+//        });
+//
+//        dialog.setCancelable(true);
+//        dialog.show();
+//    }
+
+
+    public void addListCriteriaSelection(final GroceryList groceryList){
+        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+        dialog.setContentView(R.layout.dialog_add_criteria);
+        Button nameSearchButton = (Button) dialog.findViewById(R.id.btn_name_search);
+        Button hierarchicalListButton = (Button) dialog.findViewById(R.id.btn_Hierarchical_list);
+
+        nameSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                addItemByName();
+            }
+        });
+
+        hierarchicalListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                addItemByType();
+            }
+        });
+        dialog.show();
+    }
+
+    public void addItemByName(){
+        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+        dialog.setContentView(R.layout.dialog_search_by_name);
+        EditText searchBoxEditText = (EditText) dialog.findViewById(R.id.ed_searchBox);
+        Button addItemButton = (Button) dialog.findViewById(R.id.btn_add_item);
+        final ListView searchedItemsListView = (ListView) dialog.findViewById(R.id.lv_searchedItems);
+
+        addItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        searchBoxEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                List<IteminData> results = dataHandler.getSimilarItemsFromDatabase(s.toString());
+                SearchListItemAdapter searchAdapter = new SearchListItemAdapter(GroceryListDetailsActivity.this, results);
+                searchedItemsListView.setAdapter(searchAdapter);
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void itemSelected(IteminData item){
+        dialog.dismiss();
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
         dialog.setContentView(R.layout.dialog_add_list_item);
         final EditText newItemNameEditText = (EditText) dialog.findViewById(R.id.ed_new_item_name);
         final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.ed_new_item_type);
         final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
         final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity_unit);
+        if(item.getName() != null && !item.getName().isEmpty()){
+            newItemNameEditText.setText(item.getName());
+        }
+        if(item.getType() != null && !item.getType().isEmpty()){
+            newItemTypeEditText.setText(item.getType());
+        }
+        if(item.getQuantityUnit() != null && !item.getQuantityUnit().isEmpty()){
+            newItemQuantityUnitEditText.setText(item.getQuantityUnit());
+        }
+
         Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
 
         saveItemButton.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +213,13 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
 
         dialog.setCancelable(true);
         dialog.show();
+
     }
+
+    public void addItemByType(){
+
+    }
+
 
     public void markItemAsCheckedUnchecked(IteminList item, boolean isChecked) {
         item.setChecked(isChecked);
@@ -145,7 +262,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_add_item:
-                addListDialog(groceryList);
+                addListCriteriaSelection(groceryList);
                 break;
             case R.id.btn_check_all:
                 checkAll();

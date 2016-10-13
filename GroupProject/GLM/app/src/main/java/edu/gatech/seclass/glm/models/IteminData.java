@@ -15,6 +15,12 @@ public class IteminData {
     public IteminData() {
     }
 
+    public IteminData(String _type, String _name, String _quantityUnit) {
+        name = _name;
+        type = _type;
+        quantityUnit=_quantityUnit;
+    }
+
     // get methods
     public String getId() {
         return id;

@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import edu.gatech.seclass.glm.models.GroceryList;
 import edu.gatech.seclass.glm.models.IteminData;
 import edu.gatech.seclass.glm.models.IteminList;
@@ -25,7 +24,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "glm_team_16";
 
-    private static final String TABLE_ALL_ITMES = "all_items";
+    private static final String TABLE_ALL_ITEMS = "all_items";
     private static final String TABLE_GROCERY_LISTS = "grocery_lists";
     private static final String TABLE_GROCERY_LIST_ITEMS = "grocery_list_items";
 
@@ -51,8 +50,8 @@ public class DatabaseUtil extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String CREATE_TABLE_ALL_ITEMS = "CREATE TABLE " + TABLE_ALL_ITMES + "(" + ITEM_NAME + " TEXT," +
-                ITEM_TYPE + " TEXT);";
+        String CREATE_TABLE_ALL_ITEMS = "CREATE TABLE " + TABLE_ALL_ITEMS + "(" + ITEM_NAME + " TEXT," +
+                ITEM_TYPE + " TEXT, " + ITEM_QUANTITY_UNIT + " TEXT );";
 
         String CREATE_TABLE_GROCERY_LISTS = "CREATE TABLE " + TABLE_GROCERY_LISTS + "(" + USERNAME + " TEXT," +
                 GROCERY_LIST_NAME + " TEXT, " + GROCERY_LIST_ID + " TEXT);";
@@ -65,8 +64,6 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             db.execSQL(CREATE_TABLE_GROCERY_LISTS);
             db.execSQL(CREATE_TABLE_GROCERY_LIST_ITEMS);
 
-            // TODO populate all items table
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,7 +71,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ALL_ITMES);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ALL_ITEMS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_GROCERY_LISTS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_GROCERY_LIST_ITEMS);
 
@@ -86,7 +83,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         List<IteminData> allItems = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String getAllQuery = "SELECT * FROM " + TABLE_ALL_ITMES ;
+        String getAllQuery = "SELECT * FROM " + TABLE_ALL_ITEMS;
 
         Cursor cursor = db.rawQuery(getAllQuery, null);
 
@@ -108,8 +105,8 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // select query
-        String sql = "SELECT * FROM " + TABLE_ALL_ITMES + " WHERE " + ITEM_NAME + " LIKE '" + searchString + "%'";
-        String sql2 =  "SELECT * FROM " + TABLE_ALL_ITMES + " WHERE " + ITEM_NAME + " LIKE '%" + searchString + "%'";
+        String sql = "SELECT * FROM " + TABLE_ALL_ITEMS + " WHERE " + ITEM_NAME + " LIKE '" + searchString + "%'";
+        String sql2 =  "SELECT * FROM " + TABLE_ALL_ITEMS + " WHERE " + ITEM_NAME + " LIKE '%" + searchString + "%'";
 
         Cursor cursor = db.rawQuery(sql, null);
 
@@ -118,12 +115,12 @@ public class DatabaseUtil extends SQLiteOpenHelper {
                 IteminData item = new IteminData();
                 item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                 item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
+                item.setQuantityUnit(cursor.getString(cursor.getColumnIndex(ITEM_QUANTITY_UNIT)));
                 allItems.add(item);
             } while (cursor.moveToNext());
         }
 
         if (allItems.size() == 0) {
-            db = this.getWritableDatabase();
             cursor = db.rawQuery(sql2, null);
 
             if (cursor.moveToFirst()) {
@@ -131,6 +128,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
                     IteminData item = new IteminData();
                     item.setName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                     item.setType(cursor.getString(cursor.getColumnIndex(ITEM_TYPE)));
+                    item.setQuantityUnit(cursor.getString(cursor.getColumnIndex(ITEM_QUANTITY_UNIT)));
                     allItems.add(item);
                 } while (cursor.moveToNext());
             }
@@ -278,6 +276,46 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         values.put(GROCERY_LIST_NAME, item.getName());
         values.put(GROCERY_LIST_ID, item.getId());
         db.update(TABLE_GROCERY_LISTS, values, GROCERY_LIST_ID + " = ?", new String[]{item.getId()});
+    }
+
+
+    public void addItemToDatabase(IteminData item) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(ITEM_NAME, item.getName());
+        values.put(ITEM_TYPE, item.getType());
+        db.insert(TABLE_ALL_ITEMS, null, values);
+    }
+
+    public void populateDB(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String getAllQuery = "SELECT * FROM " + TABLE_ALL_ITEMS;
+        Cursor cursor = db.rawQuery(getAllQuery, null);
+        int k = cursor.getCount();
+
+        if (k <= 0) {
+            List<IteminData> myList = new ArrayList<>();
+            myList.add(new IteminData("Cereal","Fruity loops","Boxes"));
+            myList.add(new IteminData("Cereal","Cheerios","Boxes"));
+
+            for(int i=0; i< myList.size(); i++){
+                IteminData item = myList.get(i);
+                ContentValues values = new ContentValues();
+                values.put(ITEM_NAME, item.getName());
+                values.put(ITEM_TYPE, item.getType());
+                values.put(ITEM_QUANTITY_UNIT, item.getQuantityUnit());
+                try {
+                   long count =  db.insertOrThrow(TABLE_ALL_ITEMS, null, values);
+                    count ++;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        cursor = db.rawQuery(getAllQuery, null);
+        k = cursor.getCount();
     }
 
 }
