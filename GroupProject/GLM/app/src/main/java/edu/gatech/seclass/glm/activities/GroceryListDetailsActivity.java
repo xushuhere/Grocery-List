@@ -191,6 +191,8 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
             newItemTypeEditText.setText(item.getType());
         }else{
             saveAndAddItemButton.setVisibility(View.VISIBLE);
+            saveItemButton.setVisibility(View.INVISIBLE);
+
         }
         if(item.getQuantityUnit() != null && !item.getQuantityUnit().isEmpty()){
             newItemQuantityUnitEditText.setText(item.getQuantityUnit());
