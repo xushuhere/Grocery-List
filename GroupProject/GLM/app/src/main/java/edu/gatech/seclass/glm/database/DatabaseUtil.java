@@ -340,9 +340,9 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         if (k <= 0) {
             List<IteminData> myList = new ArrayList<>();
             myList.add(new IteminData("Cereal","Fruity loops","Boxes"));
-            myList.add(new IteminData("Tide detergent","Household","Boxes"));
-            myList.add(new IteminData("Apple","Fruits","lb"));
-            myList.add(new IteminData("Milk","Diary","gallon"));
+            myList.add(new IteminData("Household","Tide detergent","Boxes"));
+            myList.add(new IteminData("Fruits","Apple","lb"));
+            myList.add(new IteminData("Diary","Milk","gallon"));
 
             for(int i=0; i< myList.size(); i++){
                 IteminData item = myList.get(i);
