@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import edu.gatech.seclass.glm.R;
+import edu.gatech.seclass.glm.database.DatabaseUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mJanetButton = (Button) findViewById(R.id.btn_janet);
         mBradButton = (Button) findViewById(R.id.btn_brad);
+
+        DatabaseUtil dataHandler = new DatabaseUtil(getApplicationContext());
+        dataHandler.populateDB();
         mActivityMainRelativeLayout = (RelativeLayout) findViewById(R.id.activity_main);
 
         mJanetButton.setOnClickListener(new View.OnClickListener() {

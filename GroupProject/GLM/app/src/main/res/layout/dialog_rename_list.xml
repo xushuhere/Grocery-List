@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="300dp"
-android:layout_height="300dp"
+android:layout_height="wrap_content"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:background="@color/white"
 android:orientation="vertical">
@@ -9,9 +9,9 @@ android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="20dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="50dp"
+        android:text="Enter Name"
         android:gravity="center"
         android:textColor="#fff"
         android:background="@color/colorPrimary"
@@ -21,9 +21,8 @@ android:orientation="vertical">
     <EditText
         android:id="@+id/ed_new_list_name"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.31"
-        android:layout_marginBottom="20dp"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
         android:gravity="center"
         android:hint="New List name"
         android:textColor="@color/colorPrimary"
@@ -31,10 +30,10 @@ android:orientation="vertical">
 
     <Button
         android:id="@+id/btn_save_list"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="60dp"
         android:text="Save"
+        style="@style/buttonStyle"
         />
 
 </LinearLayout>

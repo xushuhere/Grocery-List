@@ -45,4 +45,13 @@
     </style>
 
 
+    <style name="buttonStyle">
+        <item name="android:background">@drawable/button_style</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">2dp</item>
+
+
+    </style>
+
+
 </resources>

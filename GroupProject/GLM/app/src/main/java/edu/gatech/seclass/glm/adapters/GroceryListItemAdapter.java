@@ -45,6 +45,7 @@ public class GroceryListItemAdapter extends ArrayAdapter{
         private TextView mGroceryListItemQuantityTextView;
         private TextView mGroceryListItemQuantityUnitTextView;
         private ImageView mRemoveItemImageView;
+        private ImageView mEditItemImageView;
 
     }
     @Override
@@ -58,8 +59,8 @@ public class GroceryListItemAdapter extends ArrayAdapter{
             holder.mGroceryListItemTypeTextView = (TextView) convertView.findViewById(R.id.tv_grocery_list_item_type);
             holder.mGroceryListItemQuantityTextView = (TextView) convertView.findViewById(R.id.tv_grocery_list_item_quantity);
             holder.mGroceryListItemQuantityUnitTextView = (TextView) convertView.findViewById(R.id.tv_grocery_list_item_quantity_unit);
-            holder.mRemoveItemImageView = (ImageView) convertView.findViewById(iv_remove_item);
-
+            holder.mRemoveItemImageView = (ImageView) convertView.findViewById(R.id.iv_remove_item2);
+            holder.mEditItemImageView = (ImageView) convertView.findViewById(R.id.iv_edit_item2);
             convertView.setTag(holder);
         }
         else {
@@ -81,6 +82,7 @@ public class GroceryListItemAdapter extends ArrayAdapter{
 
         holder.mItemCheckedCheckBox.setTag(item);
         holder.mRemoveItemImageView.setTag(item);
+        holder.mEditItemImageView.setTag(item);
 
         holder.mRemoveItemImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +91,15 @@ public class GroceryListItemAdapter extends ArrayAdapter{
                 ((GroceryListDetailsActivity)getContext()). deleteItem(selectedItem);
             }
         });
+
+        holder.mEditItemImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IteminList selectedItem = (IteminList) v.getTag();
+                ((GroceryListDetailsActivity)getContext()). editItemSelected(selectedItem);
+            }
+        });
+
 
         holder.mItemCheckedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
