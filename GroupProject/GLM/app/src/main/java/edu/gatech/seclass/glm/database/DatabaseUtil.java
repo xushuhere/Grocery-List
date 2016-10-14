@@ -16,7 +16,7 @@ import edu.gatech.seclass.glm.models.IteminList;
 
 /**
  * Created by Anshul on 10/11/16.
- * updated by Shu on 10/11/16.
+ * updated by Shu on 10/12/16.
  */
 
 public class DatabaseUtil extends SQLiteOpenHelper {
@@ -391,8 +391,9 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             }
         }
 
-        cursor = db.rawQuery(getAllQuery, null);
-        k = cursor.getCount();
+        //cursor = db.rawQuery(getAllQuery, null);
+        //k = cursor.getCount();
+        cursor.close();
     }
 
 }

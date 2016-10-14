@@ -10,7 +10,6 @@ public class IteminData {
     private String type;
     private String quantityUnit;
 
-
     // constructors
     public IteminData() {
     }
