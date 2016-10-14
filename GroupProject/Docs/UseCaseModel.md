@@ -22,24 +22,25 @@
 *Normal Scenario:*
    
 * User opens application
-* Application prompts user to select desired activity: create, (re)name, or delete list
-* User selects option to create
+* User selects the matching profile
+* Application prompts user to add list
+* User selects option to add list
 * Application prompts user to enter a name for the list
 * User inputs desired name for list
-* User clicks next 
+* User clicks save 
 * New grocery list with that name is created
 
 *Alternate Scenario:*
 
 * User opens application
-* Application prompts user to select desired activity: create, (re)name, or delete list 
-* User selects option to create
+* User selects the matching profile
+* Application prompts user to add list
 * Application prompts user to enter a name for the list
 * User does not input a name for list
-* User clicks next 
-* Application prompts user that it cannot create a list without a name
+* User clicks save 
+* Application cannot save without a name
 * User input desired name for list
-* User clicks next 
+* User clicks save 
 * New grocery list with that name is created
 
 **Use Case 2:** Add items
@@ -57,39 +58,41 @@
 *Normal Scenario:*
    
 * User opens application
+* User selects user profile
 * User selects a grocery list that was previously created
-* Application prompts user to add items to the grocery list  
-* User selects add items
-* Application displays options to select an item type from a list or specify an item by entering its name
-* The user selects an item type from the list
-* The application presents a list of items to select from 
-* User selects the item they want from this list  
-* Application prompts user to input quantity of item
-* User inputs quantity
-* User selects add 
+* Application has option for user to add item to the grocery list  
+* User selects add item
+* Application displays options to search by name or search by hierarchical list
+* The user selects search by name
+* User types in the name of item they want  
+* Application lists similar items to inputted item name
+* User can select item from list or choose to add a new item if none match
+* User selects item name from list
+* User inputs item quantity 
 * A new item with the properties specified by the user is added to the selected grocery list
 
 *Alternate Scenario:*
-
 * User opens application
+* User selects user profile
 * User selects a grocery list that was previously created
-* Application prompts user to add items to the grocery list  
-* User selects add items
-* Application displays options to select an item type from a list or specify an item by entering its name
-* The user chooses to enter the item by its name
-* The application prompts the user with a list of items that are similar to the entered name
-* If one of the prompted items are what the user desired, the user selects that item
-* If none of the prompted items are what the user desired, the user selects an option for no match 
-	* Application prompts user to specify item type for entered item
-	* User enters item type 
-* Application prompts user to input quantity of item
+* Application has option for user to add item to the grocery list  
+* User selects add item
+* Application displays options to search by name or search by hierarchical list
+* The user selects search by name
+* User types in the name of item they want  
+* Application lists similar items to inputted item name
+* User can select item from list or choose to add a new item if none match
+* User selects item name from list
+* User inputs item quantity 
+* User selects to add new item, not in list
+* User inputs item type
 * User inputs quantity
-* User selects add 
+* User inputs unit
 * A new item with the properties specified by the user is added to the selected grocery list
 
 **Use Case 3:** Maintain items
 
-*Requirements:* This use case should allow the user to modify an item's quantity and remove and item from a list
+*Requirements:* This use case should allow the user to modify an item's quantity and remove an item from a list
 
 *Pre-conditions:*
 
@@ -102,9 +105,9 @@
 *Normal Scenario:*
    
 * User opens application
-* User selects a grocery list that was previously created
-* User selects an item from the list  
-* Application prompts user to edit or delete
+* User selects a user profile
+* User selects a grocery list
+* Application prompts user to edit or delete next to each item
 * If user selects edit:
 	* Application prompts user to change quantity
 	* User changes quantity
@@ -129,11 +132,11 @@
 *Normal Scenario:*
    
 * User opens application
+* User selects user profile
 * User selects a grocery list that was previously created
-* User scrolls to the item type of the item they are looking for
-* User identifies the item they need to acquire
+* User scrolls to the item they are looking for
 * If user has not acquired specified item, no changes are made
-* If user has acquired specified item, user checks off the item
+* If user has acquired specified item, user selects the item checkbox
 * User is returned to the grocery list view 
 
 **Use Case 5:** Maintain grocery lists
@@ -153,52 +156,27 @@
 * User opens application
 * User is viewing list of all available grocery lists
 * Application has edit button available
-* User selects edit
-* Application prompts user to specifiy which list to edit
-* User selects a single grocery list
-* Application prompts user to rename list or delete list
-* If user selects rename list:
-	* User enters new name for grocery list
-	* User selects save
-* If user selects delete:
-	* Application confirms user wishes to delete specified list
-	* User confirms
-	* Grocery list is deleted
-* User is returned to the grocery list view 
+* User selects edit button next to list they want to make changes to
+* Application prompts user to rename list
+* User enters new name for grocery list
+* User is returned to the grocery list view with appropriate changes saved
 
 *Alternate Scenario:*
    
 * User opens application
 * User is viewing list of all available grocery lists
-* Application has edit button available
-* User selects edit
-* Application prompts user to specifiy which list to edit
-* User selects a single grocery list
-* Application prompts user to rename list or delete list
-* If user selects rename list:
-	* User enters new name for grocery list
-	* User selects save
-* If user selects delete:
-	* Application confirms user wishes to delete specified list
-	* User selects cancel
-	* Grocery list is not deleted
-* User is returned to the grocery list view 
+* Application has delete button available
+* User selects delete button next to list they want to remove
+* Application confirms user wants to delete list
+* User confirms they want to delete list
+* User is returned to the grocery list view with appropriate list removed from the list
 
 *Alternate Scenario 2:*
    
 * User opens application
 * User is viewing list of all available grocery lists
 * Application has edit button available
-* User selects edit
-* Application prompts user to specifiy which list to edit
-* User selects a single grocery list
-* Application prompts user to rename list or delete list
-* If user selects rename list:
-	* User does not enter new name for grocery list
-	* User selects save
-	* Grocery list maintains original list name
-* If user selects delete:
-	* Application confirms user wishes to delete specified list
-	* User confirms
-	* Grocery list is deleted
-* User is returned to the grocery list view 
+* User selects edit button next to list they want to make changes to
+* Application prompts user to rename list
+* User does not enter new name for grocery list
+* User is returned to the grocery list view with no changes made to list name
