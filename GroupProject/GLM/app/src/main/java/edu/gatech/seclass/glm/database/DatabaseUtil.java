@@ -340,9 +340,41 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         if (k <= 0) {
             List<IteminData> myList = new ArrayList<>();
             myList.add(new IteminData("Cereal","Fruity loops","Boxes"));
+            myList.add(new IteminData("Cereal","Cheerios","Boxes"));
+            myList.add(new IteminData("Cereal","Oat meal","Boxes"));
+            myList.add(new IteminData("Cereal","Rice","Boxes"));
+
             myList.add(new IteminData("Household","Tide detergent","Boxes"));
-            myList.add(new IteminData("Fruits","Apple","lb"));
+            myList.add(new IteminData("Household","Dying sheets","Boxes"));
+            myList.add(new IteminData("Household","Paper towel","Boxes"));
+            myList.add(new IteminData("Household","","Boxes"));
+
+            myList.add(new IteminData("Beverages","Water","Case"));
+            myList.add(new IteminData("Beverages","Coke","Case"));
+            myList.add(new IteminData("Beverages","Diet Coke","Case"));
+            myList.add(new IteminData("Beverages","Juice","Count"));
+
+            myList.add(new IteminData("Snacks","Nuts bar","Boxes"));
+            myList.add(new IteminData("Snacks","Energy bar","Boxes"));
+            myList.add(new IteminData("Snacks","Fruit bar","Boxes"));
+
+
+
+            myList.add(new IteminData("Vegetables","Mushrooms","Pounds"));
+            myList.add(new IteminData("Vegetables","Tomatoes","Pounds"));
+            myList.add(new IteminData("Vegetables","Broccoli","Pounds"));
+
+
+            myList.add(new IteminData("Fruits","Apple","Pounds"));
+            myList.add(new IteminData("Fruits","Orange","Pounds"));
+            myList.add(new IteminData("Fruits","Banana","Pounds"));
+
+
+            myList.add(new IteminData("Diary","Yogurt","Count"));
+            myList.add(new IteminData("Diary","Cheese","Bag"));
             myList.add(new IteminData("Diary","Milk","gallon"));
+            myList.add(new IteminData("Diary","Fat-free Milk","gallon"));
+
 
             for(int i=0; i< myList.size(); i++){
                 IteminData item = myList.get(i);
