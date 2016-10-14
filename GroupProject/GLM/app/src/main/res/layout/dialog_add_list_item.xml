@@ -104,7 +104,8 @@ android:orientation="vertical">
             android:hint="Item Quantity"
             android:background="@null"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:inputType="number" />
 
     </LinearLayout>
 
