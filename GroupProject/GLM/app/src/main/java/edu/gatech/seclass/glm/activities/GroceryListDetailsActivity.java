@@ -187,15 +187,15 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
         //final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity_unit);
         Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
-        Button saveAndAddItemButton = (Button) dialog.findViewById(R.id.btn_save_and_add_item);
+        //Button saveAndAddItemButton = (Button) dialog.findViewById(R.id.btn_save_and_add_item);
         if(item.getName() != null && !item.getName().isEmpty()){
             newItemName.setText(item.getName());
         }
         if(item.getType() != null && !item.getType().isEmpty()){
             newItemType.setText(item.getType());
         }else{
-            saveAndAddItemButton.setVisibility(View.VISIBLE);
-            saveItemButton.setVisibility(View.INVISIBLE);
+            itemnNewSelected(item);
+            //saveItemButton.setVisibility(View.INVISIBLE);
 
         }
         if(item.getQuantityUnit() != null && !item.getQuantityUnit().isEmpty()){
@@ -222,15 +222,52 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
             }
         });
 
+
+        dialog.setCancelable(true);
+        dialog.show();
+    }
+
+
+    // TODO change the types as a spinner dropdown menu and pull type from database
+    // Currently manual type in types for new item
+    
+    public void itemnNewSelected(IteminData item){
+        dialog.dismiss();
+        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+        dialog.setContentView(R.layout.dialog_add_new_list_item);
+        //final EditText newItemNameEditText = (EditText) dialog.findViewById(R.id.new_item_name);
+        final TextView newItemName = (TextView) dialog.findViewById(R.id.new_item_name);
+        //final TextView newItemType = (TextView) dialog.findViewById(R.id.new_item_type);
+        //final TextView newItemUnit = (TextView) dialog.findViewById(R.id.new_item_quantity_unit);
+
+        final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.new_item_type);
+        final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
+        final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.new_item_quantity_unit);
+        //Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
+        Button saveAndAddItemButton = (Button) dialog.findViewById(R.id.btn_save_and_add_item);
+         if(item.getName() != null && !item.getName().isEmpty()){
+             newItemName.setText(item.getName());
+         }
+        //        if(item.getType() != null && !item.getType().isEmpty()){
+        //            newItemTypeEditText.setText(item.getType());
+        //        }else{
+        //            saveAndAddItemButton.setVisibility(View.VISIBLE);
+        //            //saveItemButton.setVisibility(View.INVISIBLE);
+        //
+        //        }
+        //        if(item.getQuantityUnit() != null && !item.getQuantityUnit().isEmpty()){
+        //            newItemQuantityUnitEditText.setText(item.getQuantityUnit());
+        //        }
+
         saveAndAddItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 IteminList item = new IteminList();
                 IteminData itemForDB = new IteminData();
                 item.setName(newItemName.getText().toString());
-                item.setType(newItemType.getText().toString());
+                item.setType(newItemTypeEditText.getText().toString());
                 item.setQuantity(newItemQuantityEditText.getText().toString());
-                item.setQuantityUnit(newItemUnit.getText().toString());
+                item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
                 item.setChecked(false);
                 item.setId(UUID.randomUUID().toString().replace("-", ""));
 
@@ -252,7 +289,6 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         dialog.setCancelable(true);
         dialog.show();
     }
-
 
     public void editItemSelected(final IteminList item){
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
