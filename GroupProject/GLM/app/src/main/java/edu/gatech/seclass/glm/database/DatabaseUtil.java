@@ -347,7 +347,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             myList.add(new IteminData("Household","Tide detergent","Boxes"));
             myList.add(new IteminData("Household","Dying sheets","Boxes"));
             myList.add(new IteminData("Household","Paper towel","Boxes"));
-            myList.add(new IteminData("Household","","Boxes"));
+            myList.add(new IteminData("Household","Facial tissue","Boxes"));
 
             myList.add(new IteminData("Beverages","Water","Case"));
             myList.add(new IteminData("Beverages","Coke","Case"));
