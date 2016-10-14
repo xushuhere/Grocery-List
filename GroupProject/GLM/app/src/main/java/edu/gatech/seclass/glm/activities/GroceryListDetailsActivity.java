@@ -249,6 +249,36 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         dialog.show();
     }
 
+
+    public void editItemSelected(final IteminList item){
+        //dialog.dismiss();
+        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
+        dialog.setContentView(R.layout.dialog_edit_list_item);
+        final EditText editedItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_item_quantity);
+        Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
+
+
+        saveItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                item.setQuantity(editedItemQuantityEditText.getText().toString());
+                //item.setChecked(false);
+                //item.setId(UUID.randomUUID().toString().replace("-", ""));
+
+                dataHandler.updateItemInGroceryList(item);
+                dialog.dismiss();
+
+                items.clear();
+                items.addAll(dataHandler.getAllItemsInGroceryList(groceryList.getId()));
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+
+        dialog.setCancelable(true);
+        dialog.show();
+    }
+
     public void addItemByType(){
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
         dialog.setContentView(R.layout.dialog_search_by_type_parent);
