@@ -391,7 +391,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             }
         }
 
-        //cursor = db.rawQuery(getAllQuery, null);
+        cursor = db.rawQuery(getAllQuery, null);
         //k = cursor.getCount();
         cursor.close();
     }
