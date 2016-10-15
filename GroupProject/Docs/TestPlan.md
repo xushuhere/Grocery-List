@@ -117,35 +117,35 @@ Database classes (3 classes): passed.
     <td>Open App</td>
     <td>App Opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on the list name user wants to rename</td>
     <td>A dialog opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on rename list</td>
     <td>A dialog opens asking for a new name</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Type new list name</td>
     <td>User is able to type name</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click save</td>
     <td>List gets renamed</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -159,14 +159,14 @@ Database classes (3 classes): passed.
     <td>User opens the application</td>
     <td>App Opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Check to see if multiple cards are displayed for the grocery lists associated with the user</td>
     <td>Different lists are visible on the dashboard associated with the user</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -180,7 +180,7 @@ Database classes (3 classes): passed.
     <td>User 1 Opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -188,21 +188,21 @@ Database classes (3 classes): passed.
     <td>User 1 is able to log in and view list associated
 to him/her </td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User 1 logs out </td>
     <td>User 1 is able to log out successfully</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User 2 Logs in</td>
     <td>User 2 is able to login and view list associated to him/her and not with user 1</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -216,14 +216,14 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on the list name user wants to activate</td>
     <td>A new window with details of this particular list opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -581,14 +581,14 @@ to him/her </td>
     <td>User clicks on add item button</td>
     <td>A dialog opens prompting user to add the item name and type</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User adds information and clicks save</td>
     <td>New item gets added to the database</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
 </table>
 
