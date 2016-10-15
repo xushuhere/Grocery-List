@@ -358,16 +358,14 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             myList.add(new IteminData("Snacks","Energy bar","Boxes"));
             myList.add(new IteminData("Snacks","Fruit bar","Boxes"));
 
+            myList.add(new IteminData("Vegetables","Mushrooms","lbs"));
+            myList.add(new IteminData("Vegetables","Tomatoes","lbs"));
+            myList.add(new IteminData("Vegetables","Broccoli","lbs"));
 
 
-            myList.add(new IteminData("Vegetables","Mushrooms","Pounds"));
-            myList.add(new IteminData("Vegetables","Tomatoes","Pounds"));
-            myList.add(new IteminData("Vegetables","Broccoli","Pounds"));
-
-
-            myList.add(new IteminData("Fruits","Apple","Pounds"));
-            myList.add(new IteminData("Fruits","Orange","Pounds"));
-            myList.add(new IteminData("Fruits","Banana","Pounds"));
+            myList.add(new IteminData("Fruits","Apple","lbs"));
+            myList.add(new IteminData("Fruits","Orange","lbs"));
+            myList.add(new IteminData("Fruits","Banana","lbs"));
 
 
             myList.add(new IteminData("Diary","Yogurt","Count"));
