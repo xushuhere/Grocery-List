@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -235,29 +236,21 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         dialog.dismiss();
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
         dialog.setContentView(R.layout.dialog_add_new_list_item);
-        //final EditText newItemNameEditText = (EditText) dialog.findViewById(R.id.new_item_name);
         final TextView newItemName = (TextView) dialog.findViewById(R.id.new_item_name);
-        //final TextView newItemType = (TextView) dialog.findViewById(R.id.new_item_type);
-        //final TextView newItemUnit = (TextView) dialog.findViewById(R.id.new_item_quantity_unit);
-
-        final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.new_item_type);
         final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
         final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.new_item_quantity_unit);
-        //Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
         Button saveAndAddItemButton = (Button) dialog.findViewById(R.id.btn_save_and_add_item);
          if(item.getName() != null && !item.getName().isEmpty()){
              newItemName.setText(item.getName());
          }
-        //        if(item.getType() != null && !item.getType().isEmpty()){
-        //            newItemTypeEditText.setText(item.getType());
-        //        }else{
-        //            saveAndAddItemButton.setVisibility(View.VISIBLE);
-        //            //saveItemButton.setVisibility(View.INVISIBLE);
-        //
-        //        }
-        //        if(item.getQuantityUnit() != null && !item.getQuantityUnit().isEmpty()){
-        //            newItemQuantityUnitEditText.setText(item.getQuantityUnit());
-        //        }
+
+        final Spinner newItemTypeSpinner = (Spinner) dialog.findViewById(R.id.new_item_type);
+
+
+        ArrayAdapter<String> searchInAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.custom_list_item_text, dataHandler.getAllItemsTypesFromDatabase());
+        searchInAdapter.setDropDownViewResource(R.layout.custom_list_item_text);
+        newItemTypeSpinner.setAdapter(searchInAdapter);
+        newItemTypeSpinner.setSelection(0);
 
         saveAndAddItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -265,7 +258,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
                 IteminList item = new IteminList();
                 IteminData itemForDB = new IteminData();
                 item.setName(newItemName.getText().toString());
-                item.setType(newItemTypeEditText.getText().toString());
+                item.setType(newItemTypeSpinner.getSelectedItem().toString());
                 item.setQuantity(newItemQuantityEditText.getText().toString());
                 item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
                 item.setChecked(false);
