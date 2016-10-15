@@ -237,7 +237,7 @@ to him/her </td>
     <td>User clicks on add item</td>
     <td>A dialog opens that allows user to search for item</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -252,14 +252,14 @@ to him/her </td>
     <td>User selects an item</td>
     <td>Item gets selected and fills the edit text</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on save</td>
     <td>Item gets added to the list</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -273,14 +273,14 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the name of the list user wants to see</td>
     <td>A new window opens with items in the list sorted by type</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -294,21 +294,21 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check all items for</td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the check all checkbox</td>
     <td>The checkboxes new to all items on the activity get marked as checked</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -322,21 +322,21 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check all items for</td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the un-check all checkbox</td>
     <td>The checkboxes new to all items on the activity get marked as unchecked</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -350,28 +350,28 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check all items for</td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the remove button next the item user wants to remove</td>
     <td>A dialog opens asking the user to confirm</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks confirm</td>
     <td>The item gets removed from the list</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -385,21 +385,21 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check item for</td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the checkbox next the item user wants to check(currently unchecked)</td>
     <td>The checkbox on the item gets marked as checked</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -413,21 +413,21 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to uncheck item for</td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the checkbox next the item user wants to check(currently checked)</td>
     <td>The checkbox on the item gets marked as unchecked</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -441,35 +441,35 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to change item quantities for </td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the quantity button next the item user wants to change quantity for</td>
     <td>A dialog opens asking the user to enter new quantity</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User types in the new quantity and selects unit</td>
     <td>User enters new quantity</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks save</td>
     <td>The quantity value next to the item gets updated to new quantity</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -483,28 +483,28 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the a list name</td>
     <td>A new window opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the spinner on top that displays all the user lists</td>
     <td>Spinner dropdown gets expanded</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to switch to</td>
     <td>Window refreshes and display the new list</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -518,14 +518,14 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on manage DB button</td>
     <td>A new window opens that displays all item types in a list</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -539,21 +539,21 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on manage DB button</td>
     <td>A new window opens that displays all item types in a list</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on an item type</td>
     <td>A new window opens that displays all items of the selected type in a list</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -567,7 +567,7 @@ to him/her </td>
     <td>User opens the app</td>
     <td>App opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
