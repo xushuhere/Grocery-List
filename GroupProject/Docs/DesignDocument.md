@@ -8,7 +8,7 @@ The application is a single user end operated in an android system for grocery l
 The users will be required to open and navigate the interface via their android phones. They will be able to operate the software by clicking buttons, selecting radio button, check/uncheck boxes. The device has internet connections and will be able to pull remote data from a database server.
 - The user will have access to an Android 4.0+ smart phone
 - The user is capable of using common Android 4.0+ UI components
-- The parse.com data store will continue to operate through the use of the application
+- The data store will continue to operate android SQLite
 - The security of this application is not required.
 
 ### 1.2 Constraints
@@ -59,7 +59,7 @@ The following sections describe the implemented functions of the system and how 
 How our classes fit into our architecture:
 * Presentation Layer: Application, HierarchicalList, SpecifySearch
 * Logic Layer: GroceryList, Item, Database (class)
-* Database Layer: None (This layer contains the physical data and the server that provides the data) 
+* Database Layer: None (This layer contains the physical data and the SQLite that provides the data) 
 
 #![alt tag](../Design-Team/images/design-team.png)
 
