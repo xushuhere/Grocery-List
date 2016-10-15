@@ -35,9 +35,11 @@ Github will be used to keep track of the bugs we will let users open issues that
 
 ### **1.5 Technology**
 
-We will use JUNIT to perform our unit tests and we will use code coverage tools provided by Android studio.
+We will use JUNIT to perform our unit tests and we will also use manually test our app by different devices and opearations.
 
 ## **2 Test Cases**
+JUNIT tests:
+Database classes (3 classes): passed.
 
 <table>
   <tr>
@@ -52,28 +54,28 @@ We will use JUNIT to perform our unit tests and we will use code coverage tools 
     <td>Open App</td>
     <td>App Opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on create list button</td>
     <td>A dialog opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Type the name of new list in dialog</td>
     <td>User is able to type name </td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click Save</td>
     <td>Dialog is dismissed  and new list is visible on the page</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
@@ -87,21 +89,21 @@ We will use JUNIT to perform our unit tests and we will use code coverage tools 
     <td>Open App</td>
     <td>App Opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on the list name user wants to delete</td>
     <td>A dialog opens</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on delete list</td>
     <td>List gets deleted and is removed from the page</td>
     <td></td>
-    <td></td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
