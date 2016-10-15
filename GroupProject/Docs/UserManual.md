@@ -37,7 +37,7 @@ After a list is added to the profile, there is an option to rename the list by s
 
 #![alt tag](Images/edit_button.png)
 
->*ADD (Rename List Screen) SCREENSHOT HERE*
+#![alt tag](Images/screenshot_addlist_clicked_updated.png)
 
 :scroll: _STEPS_
 * STEP 1: Select Pencil Icon.
@@ -48,7 +48,7 @@ After a list is added to the profile, there is also an option to remove the list
 
 #![alt tag](Images/remove_sign.png)
 
->*ADD (list removed) SCREENSHOT HERE*
+#![alt tag](Images/screenshot_addlist_empty.png)
 
 :scroll: _STEPS_
 * STEP 1: Select X button.
@@ -97,5 +97,5 @@ After a list is added to the profile, there is also an option to remove the list
 #![alt tag](Images/screenshot_edititem_saved.png)
 
 ## 5 Conclusion
-This is the alpha version of grocery list manger. It has the ability to add/edit shopping list, add item to the list by hierarchical search or specified name search. In addition, user can add item by specified search and save it to database for future use and add it to current list.
+This is the alpha version of grocery list manger. It has the ability to add/edit shopping list, add item to the list by hierarchical search or specified name search. In addition, users can add item by specified search and save it to database for future use and add it to current list.
 
