@@ -39,8 +39,6 @@ We will use JUNIT to perform our unit tests and we will use code coverage tools 
 
 ## **2 Test Cases**
 
-#![alt tag](Images/MockUp2.png)![alt tag](Images/ListsSelectDelete.png)![alt tag](Images/HierArchicalList.png)
-
 <table>
   <tr>
     <td>Purpose</td>
