@@ -26,6 +26,7 @@ android:orientation="vertical"
         android:background="@null"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
+        android:maxLines="1"
         android:layout_weight="1"
         android:inputType="number"
         android:layout_height="60dp" />

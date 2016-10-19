@@ -209,7 +209,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
                 IteminList item = new IteminList();
                 item.setName(newItemName.getText().toString());
                 item.setType(newItemType.getText().toString());
-                item.setQuantity(newItemQuantityEditText.getText().toString());
+                item.setQuantity(removedPrependedZeros(newItemQuantityEditText.getText().toString()));
                 item.setQuantityUnit(newItemUnit.getText().toString());
                 item.setChecked(false);
                 item.setId(UUID.randomUUID().toString().replace("-", ""));
@@ -259,7 +259,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
                 IteminData itemForDB = new IteminData();
                 item.setName(newItemName.getText().toString());
                 item.setType(newItemTypeSpinner.getSelectedItem().toString());
-                item.setQuantity(newItemQuantityEditText.getText().toString());
+                item.setQuantity(removedPrependedZeros(newItemQuantityEditText.getText().toString()));
                 item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
                 item.setChecked(false);
                 item.setId(UUID.randomUUID().toString().replace("-", ""));
@@ -292,7 +292,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         saveItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                item.setQuantity(editedItemQuantityEditText.getText().toString());
+                item.setQuantity(removedPrependedZeros(editedItemQuantityEditText.getText().toString()));
                 dataHandler.updateItemInGroceryList(item);
                 dialog.dismiss();
                 items.clear();
@@ -387,5 +387,9 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
                 uncheckAll();
                 break;
         }
+    }
+
+    public String removedPrependedZeros(String s){
+        return Integer.valueOf(s).toString();
     }
 }
