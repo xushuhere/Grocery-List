@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,41 +79,6 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
 
     }
 
-//    public void addListDialog(final GroceryList groceryList){
-//        dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
-//        dialog.setContentView(R.layout.dialog_add_list_item);
-//        final EditText newItemNameEditText = (EditText) dialog.findViewById(R.id.ed_new_item_name);
-//        final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.ed_new_item_type);
-//        final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
-//        final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity_unit);
-//        Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
-//
-//        saveItemButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                IteminList item = new IteminList();
-//                item.setName(newItemNameEditText.getText().toString());
-//                item.setType(newItemTypeEditText.getText().toString());
-//                item.setQuantity(newItemQuantityEditText.getText().toString());
-//                item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
-//                item.setChecked(false);
-//                item.setId(UUID.randomUUID().toString().replace("-", ""));
-//
-//                dataHandler.addItemToGroceryList(item, groceryList.getId());
-//                dialog.dismiss();
-//
-//                items.clear();
-//                items.addAll(dataHandler.getAllItemsInGroceryList(groceryList.getId()));
-//                adapter.notifyDataSetChanged();
-//
-//            }
-//        });
-//
-//        dialog.setCancelable(true);
-//        dialog.show();
-//    }
-
-
     public void addListCriteriaSelection(final GroceryList groceryList){
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
         dialog.setContentView(R.layout.dialog_add_criteria);
@@ -148,7 +114,7 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
             @Override
             public void onClick(View v) {
                 IteminData itemInData = new IteminData();
-                itemInData.setName(searchBoxEditText.getText().toString());
+                itemInData.setName(searchBoxEditText.getText().toString().trim());
                 itemSelected(itemInData);
             }
         });
@@ -179,16 +145,12 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         dialog.dismiss();
         dialog = new Dialog(GroceryListDetailsActivity.this, R.style.CustomDialogTheme);
         dialog.setContentView(R.layout.dialog_add_list_item);
-        //final EditText newItemNameEditText = (EditText) dialog.findViewById(R.id.ed_new_item_name);
         final TextView newItemName = (TextView) dialog.findViewById(R.id.new_item_name);
         final TextView newItemType = (TextView) dialog.findViewById(R.id.new_item_type);
         final TextView newItemUnit = (TextView) dialog.findViewById(R.id.new_item_quantity_unit);
 
-        //final EditText newItemTypeEditText = (EditText) dialog.findViewById(R.id.ed_new_item_type);
         final EditText newItemQuantityEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity);
-        //final EditText newItemQuantityUnitEditText = (EditText) dialog.findViewById(R.id.ed_new_item_quantity_unit);
         Button saveItemButton = (Button) dialog.findViewById(R.id.btn_save_item);
-        //Button saveAndAddItemButton = (Button) dialog.findViewById(R.id.btn_save_and_add_item);
         if(item.getName() != null && !item.getName().isEmpty()){
             newItemName.setText(item.getName());
         }
@@ -209,7 +171,11 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
                 IteminList item = new IteminList();
                 item.setName(newItemName.getText().toString());
                 item.setType(newItemType.getText().toString());
-                item.setQuantity(removedPrependedZeros(newItemQuantityEditText.getText().toString()));
+                item.setQuantity(removedPrependedZeros(newItemQuantityEditText.getText().toString().trim()));
+                if(!checkQuantityValid(removedPrependedZeros(newItemQuantityEditText.getText().toString().trim()))){
+                    Toast.makeText(GroceryListDetailsActivity.this, "Enter Valid Quantity", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 item.setQuantityUnit(newItemUnit.getText().toString());
                 item.setChecked(false);
                 item.setId(UUID.randomUUID().toString().replace("-", ""));
@@ -257,10 +223,14 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
             public void onClick(View v) {
                 IteminList item = new IteminList();
                 IteminData itemForDB = new IteminData();
-                item.setName(newItemName.getText().toString());
-                item.setType(newItemTypeSpinner.getSelectedItem().toString());
-                item.setQuantity(removedPrependedZeros(newItemQuantityEditText.getText().toString()));
-                item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString());
+                item.setName(newItemName.getText().toString().trim());
+                item.setType(newItemTypeSpinner.getSelectedItem().toString().trim());
+                item.setQuantity(removedPrependedZeros(newItemQuantityEditText.getText().toString().trim()));
+                if(!checkQuantityValid(removedPrependedZeros(newItemQuantityEditText.getText().toString().trim()))){
+                    Toast.makeText(GroceryListDetailsActivity.this, "Enter Valid Quantity", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                item.setQuantityUnit(newItemQuantityUnitEditText.getText().toString().trim());
                 item.setChecked(false);
                 item.setId(UUID.randomUUID().toString().replace("-", ""));
 
@@ -292,7 +262,11 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
         saveItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                item.setQuantity(removedPrependedZeros(editedItemQuantityEditText.getText().toString()));
+                item.setQuantity(removedPrependedZeros(editedItemQuantityEditText.getText().toString().trim()));
+                if(!checkQuantityValid(removedPrependedZeros(editedItemQuantityEditText.getText().toString().trim()))){
+                    Toast.makeText(GroceryListDetailsActivity.this, "Enter Valid Quantity", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 dataHandler.updateItemInGroceryList(item);
                 dialog.dismiss();
                 items.clear();
@@ -390,6 +364,15 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
     }
 
     public String removedPrependedZeros(String s){
-        return Integer.valueOf(s).toString();
+        if(s.length() > 0){
+            return Integer.valueOf(s).toString();
+        }
+
+        return "0";
+
+    }
+
+    public boolean checkQuantityValid(String s){
+        return Integer.valueOf(s) > 0;
     }
 }
