@@ -53,28 +53,35 @@ Database classes (3 classes): passed.
     <td>Create List</td>
     <td>Open App</td>
     <td>App Opens</td>
+    <td>App Opens</td>
+    <td>P</td>
+  </tr>
+    <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>Click on create list button</td>
-    <td>A dialog opens</td>
-    <td></td>
+    <td>Click on add list button</td>
+    <td>Dialog opens</td>
+    <td>Dialog opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Type the name of new list in dialog</td>
     <td>User is able to type name </td>
-    <td></td>
+    <td>User is able to type name</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click Save</td>
-    <td>Dialog is dismissed  and new list is visible on the page</td>
-    <td></td>
+    <td>Dialog is dismissed and new list is visible on the page</td>
+    <td>Dialog is dismissed and new list is visible on the page</td>
     <td>P</td>
   </tr>
   <tr>
@@ -88,23 +95,25 @@ Database classes (3 classes): passed.
     <td>Delete List from Dashboard</td>
     <td>Open App</td>
     <td>App Opens</td>
+    <td>App Opens</td>
+    <td>P</td>
+  </tr>
+   </tr>
+    <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>Click on the list name user wants to delete</td>
-    <td>A dialog opens</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Click on delete list</td>
+    <td>User selects X button next to list that should be deleted</td>
+    <td>List gets deleted and is removed from the page </td>
     <td>List gets deleted and is removed from the page</td>
-    <td></td>
     <td>P</td>
   </tr>
+ 
   <tr>
     <td></td>
     <td></td>
@@ -119,32 +128,32 @@ Database classes (3 classes): passed.
     <td></td>
     <td>P</td>
   </tr>
-  <tr>
+   <tr>
     <td></td>
-    <td>Click on the list name user wants to rename</td>
-    <td>A dialog opens</td>
-    <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>Click on rename list</td>
+    <td>Click on pencil button next to list that should be renamed</td>
     <td>A dialog opens asking for a new name</td>
-    <td></td>
+    <td>A dialog opens asking for a new name</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Type new list name</td>
-    <td>User is able to type name</td>
-    <td></td>
+    <td>User is able to type name in field</td>
+    <td>User is able to type name in field</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click save</td>
-    <td>List gets renamed</td>
-    <td></td>
+    <td>List gets renamed and view is returned to lists page</td>
+    <td>List gets renamed and view is returned to lists page</td>
     <td>P</td>
   </tr>
   <tr>
@@ -158,14 +167,21 @@ Database classes (3 classes): passed.
     <td>View all grocery lists that belong to user</td>
     <td>User opens the application</td>
     <td>App Opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+  <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Check to see if multiple cards are displayed for the grocery lists associated with the user</td>
     <td>Different lists are visible on the dashboard associated with the user</td>
-    <td></td>
+    <td>Different lists are visible on the dashboard associated with the user</td>
     <td>P</td>
   </tr>
   <tr>
@@ -179,29 +195,30 @@ Database classes (3 classes): passed.
     <td>User should not be able to see grocery lists that belong to other users</td>
     <td>User 1 Opens the app</td>
     <td>App opens</td>
-    <td></td>
+    <td>App opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>User 1 logs in </td>
-    <td>User 1 is able to log in and view list associated
+    <td>User 1 selects their profile </td>
+    <td>User 1 is able view lists associated
 to him/her </td>
-    <td></td>
+    <td>User 1 is able view lists associated
+to him/her</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>User 1 logs out </td>
-    <td>User 1 is able to log out successfully</td>
-    <td></td>
+    <td>User 1 exits out of profile using back button</td>
+    <td>User 1 is able to successfully exit their profile</td>
+    <td>User 1 is able to successfully exit their profile</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>User 2 Logs in</td>
-    <td>User 2 is able to login and view list associated to him/her and not with user 1</td>
-    <td></td>
+    <td>User 2 selects their profile</td>
+    <td>User 2 is able to view lists associated to him/her and not with user 1</td>
+    <td>User 2 is able to view lists associated to him/her and not with user 1</td>
     <td>P</td>
   </tr>
   <tr>
@@ -215,14 +232,21 @@ to him/her </td>
     <td>Mark a grocery list as active</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+   <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>Click on the list name user wants to activate</td>
-    <td>A new window with details of this particular list opens</td>
-    <td></td>
+    <td>A new view with items associated withthis particular list opens</td>
+    <td>A new view with items associated withthis particular list opens</td>
     <td>P</td>
   </tr>
   <tr>
@@ -233,32 +257,47 @@ to him/her </td>
     <td></td>
   </tr>
   <tr>
-    <td>Add item to the active grocery list</td>
-    <td>User clicks on add item</td>
-    <td>A dialog opens that allows user to search for item</td>
-    <td></td>
+    <td>Add item to the active grocery list from hierarchical list</td>
+    <td>User clicks on add item inside of grocery list view</td>
+    <td>A dialog opens that prompts user to add by search or from hierarchical list</td>
+    <td>A dialog opens that prompts user to add by search or from hierarchical list </td>
     <td>P</td>
   </tr>
-  <tr>
+    <tr>
     <td></td>
-    <td>User starts typing the search term
+    <td>User selects add from hierarchical list
 </td>
-    <td>As the user is typing a list is populated with all the items that match the search term</td>
-    <td></td>
-    <td></td>
+    <td>New view shows availble item types</td>
+    <td>New view shows available item types</td>
+    <td>P</td>
+
+  <tr>
+  <td></td>
+    <td>User selects desired item type
+</td>
+    <td>New view shows all available items associated to that item type</td>
+    <td>New view shows all available items associated to that item type</td>
+    <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User selects an item</td>
-    <td>Item gets selected and fills the edit text</td>
+    <td>A dialog prompts user to enter quantity amount</td>
+    <td>A dialog prompts user to enter quantity amount</td>
+    <td>P</td>
+  </tr>
+    <tr>
     <td></td>
+    <td>User enters quantity</td>
+    <td>Able to enter quantity into field</td>
+    <td>Able to enter quantity into field </td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on save</td>
     <td>Item gets added to the list</td>
-    <td></td>
+    <td>Item gets added to the list</td>
     <td>P</td>
   </tr>
   <tr>
@@ -272,14 +311,21 @@ to him/her </td>
     <td>See all items in the grocery list ordered by type</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+   <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the name of the list user wants to see</td>
     <td>A new window opens with items in the list sorted by type</td>
-    <td></td>
+    <td>A new window opens with items in the list sorted by type</td>
     <td>P</td>
   </tr>
   <tr>
@@ -293,21 +339,28 @@ to him/her </td>
     <td>Check all Items in the grocery list</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+   <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check all items for</td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the check all checkbox</td>
-    <td>The checkboxes new to all items on the activity get marked as checked</td>
-    <td></td>
+    <td>The checkboxes next to all items on the activity get marked as checked</td>
+    <td>The checkboxes next to all items on the activity get marked as checked</td>
     <td>P</td>
   </tr>
   <tr>
@@ -321,21 +374,28 @@ to him/her </td>
     <td>Un - Check all Items in the grocery list</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+   <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check all items for</td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the un-check all checkbox</td>
-    <td>The checkboxes new to all items on the activity get marked as unchecked</td>
-    <td></td>
+    <td>The checkboxes next to all items on the activity get marked as unchecked</td>
+    <td>The checkboxes next to all items on the activity get marked as unchecked</td>
     <td>P</td>
   </tr>
   <tr>
@@ -349,30 +409,31 @@ to him/her </td>
     <td>Remove item from the grocery list</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+   <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>User clicks on the list name user wants to check all items for</td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>User clicks on the list name user wants to remove items from from</td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the remove button next the item user wants to remove</td>
-    <td>A dialog opens asking the user to confirm</td>
-    <td></td>
+    <td>Item gets removed from the list</td>
+    <td>Item gets removed from the list</td>
     <td>P</td>
   </tr>
-  <tr>
-    <td></td>
-    <td>User clicks confirm</td>
-    <td>The item gets removed from the list</td>
-    <td></td>
-    <td>P</td>
-  </tr>
+
   <tr>
     <td></td>
     <td></td>
@@ -384,21 +445,28 @@ to him/her </td>
     <td>Check an individual item in grocery list</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+     <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to check item for</td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the checkbox next the item user wants to check(currently unchecked)</td>
     <td>The checkbox on the item gets marked as checked</td>
-    <td></td>
+    <td>The checkbox on the item gets marked as checked</td>
     <td>P</td>
   </tr>
   <tr>
@@ -412,21 +480,28 @@ to him/her </td>
     <td>Un-check an individual item in grocery list</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+   <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to uncheck item for</td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the checkbox next the item user wants to check(currently checked)</td>
     <td>The checkbox on the item gets marked as unchecked</td>
-    <td></td>
+    <td>The checkbox on the item gets marked as unchecked</td>
     <td>P</td>
   </tr>
   <tr>
@@ -440,35 +515,42 @@ to him/her </td>
     <td>Change quantity of an Item in grocery list</td>
     <td>User opens the app</td>
     <td>App opens</td>
+    <td>App opens</td>
+    <td>P</td>
+  </tr>
+       <tr>
     <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to change item quantities for </td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the quantity button next the item user wants to change quantity for</td>
     <td>A dialog opens asking the user to enter new quantity</td>
-    <td></td>
+    <td>A dialog opens asking the user to enter new quantity</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User types in the new quantity and selects unit</td>
     <td>User enters new quantity</td>
-    <td></td>
+    <td>User enters new quantity</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks save</td>
     <td>The quantity value next to the item gets updated to new quantity</td>
-    <td></td>
+    <td>The quantity value next to the item gets updated to new quantity</td>
     <td>P</td>
   </tr>
   <tr>
@@ -482,114 +564,35 @@ to him/her </td>
     <td>Switch between the lists</td>
     <td>User opens the app</td>
     <td>App opens</td>
-    <td></td>
+    <td>App opens</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>User clicks on the a list name</td>
-    <td>A new window opens</td>
-    <td></td>
+    <td>Click on user profile</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
-    <td>User clicks on the spinner on top that displays all the user lists</td>
-    <td>Spinner dropdown gets expanded</td>
+    <td>User clicks on a list name</td>
+    <td>List with all associated items page opens</td>
+    <td>List with all associated items page opens</td>
+    <td>P</td>
+  </tr>
+  <tr>
     <td></td>
+    <td>User clicks back nav button</td>
+    <td>Shows lists dashboard</td>
+    <td>Shows lists dashboard</td>
     <td>P</td>
   </tr>
   <tr>
     <td></td>
     <td>User clicks on the list name user wants to switch to</td>
     <td>Window refreshes and display the new list</td>
-    <td></td>
+    <td>Window refreshes and display the new list</td>
     <td>P</td>
   </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>See all items types in database</td>
-    <td>User opens the app</td>
-    <td>App opens</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>User clicks on manage DB button</td>
-    <td>A new window opens that displays all item types in a list</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>See all items for a particular type in the database</td>
-    <td>User opens the app</td>
-    <td>App opens</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>User clicks on manage DB button</td>
-    <td>A new window opens that displays all item types in a list</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>User clicks on an item type</td>
-    <td>A new window opens that displays all items of the selected type in a list</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Add items to the database</td>
-    <td>User opens the app</td>
-    <td>App opens</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>User clicks on manage DB button</td>
-    <td>A new window opens that displays all item types in a list</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>User clicks on add item button</td>
-    <td>A dialog opens prompting user to add the item name and type</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>User adds information and clicks save</td>
-    <td>New item gets added to the database</td>
-    <td></td>
-    <td>P</td>
-  </tr>
-</table>
-
 
