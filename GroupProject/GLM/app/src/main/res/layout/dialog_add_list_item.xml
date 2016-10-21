@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="300dp"
-android:layout_height="600dp"
+android:layout_height="480dp"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:background="@color/white"
 android:orientation="vertical">
@@ -32,7 +32,7 @@ android:orientation="vertical">
             android:layout_marginBottom="5dp"
             android:gravity="left"
             android:text="Name"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@android:color/black"
             android:background="@color/white"
             android:textSize="15sp" />
 
@@ -41,7 +41,8 @@ android:orientation="vertical">
             android:layout_height="wrap_content"
             android:id="@+id/new_item_name"
             android:layout_weight="0.32"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
@@ -61,24 +62,26 @@ android:orientation="vertical">
             android:gravity="left"
             android:text="Type"
             android:background="@color/white"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/new_item_type"
             android:layout_weight="0.28"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:padding = "10dp"
         android:orientation="vertical"
-        android:layout_weight="0.83">
+        android:layout_weight="0.83"
+        android:layout_height="0dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -86,7 +89,7 @@ android:orientation="vertical">
             android:layout_marginBottom="5dp"
             android:gravity="left"
             android:text="Quantity"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@android:color/black"
             android:background="@color/white"
             android:textSize="15sp" />
 
@@ -98,7 +101,8 @@ android:orientation="vertical">
             android:maxLines="1"
             android:hint="Item Quantity"
             android:background="@null"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
@@ -116,7 +120,7 @@ android:orientation="vertical">
             android:layout_marginBottom="5dp"
             android:gravity="left"
             android:text="Unit"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@android:color/black"
             android:background="@color/white"
             android:textSize="15sp" />
 
@@ -125,7 +129,8 @@ android:orientation="vertical">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/new_item_quantity_unit"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
