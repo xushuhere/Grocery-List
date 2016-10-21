@@ -11,7 +11,7 @@
 
 **Use Case 1:** Select the user
 
-*Requirements:* This use case should allow the user to select cooresponding user to manager the grocery list(s) of Brad or Jeana to track items they need or want to purchase from a grocery store. 
+*Requirements:* This use case should allow the user to select cooresponding user to manager the grocery list(s) of Brad or Janet to track items they need or want to purchase from a grocery store. 
 
 *Pre-conditions:* None
 
