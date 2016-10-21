@@ -11,9 +11,12 @@ When the application starts, the user is presented with a list of usernames/prof
 :arrow_down_small: Profile Screen
 #![profile screen](Images/screenshot_profiles.png)
 
+* CHANGE User: User can click native backwards key from your device to go back to the previous page
+
 
 :scroll: _STEPS_
 * STEP 1: Select User/Profile
+
 
 ## 3 Working With Grocery Lists
 After selecting a user profile a screen is displayed that contains the selected user's grocery lists.
@@ -33,6 +36,9 @@ To create a list on this screen the user is given an "Add List" button at the bo
 :arrow_down_small: Grocery List screen after the new list is added
 #![list added](Images/screenshot_addlist_onelist.png)
 
+* CANCEL the action : User can click native backwards key from your device to go back to the previous page
+
+
 :scroll: _STEPS_
 * STEP 1: Select Add List.
 * STEP 2: Enter a name for the grocery list.
@@ -43,6 +49,8 @@ After a list is added to the profile, there is an option to rename the list by s
 
 :arrow_down_small: Renamed List
 #![rename list](Images/screenshot_addlist_clicked_updated.png)
+
+* CANCEL the action : User can click native backwards key from your device to go back to the previous page
 
 :scroll: _STEPS_
 * STEP 1: Select Pencil Icon.
@@ -67,6 +75,9 @@ After a list is added to the profile, there is also an option to remove the list
 
 :arrow_down_small: Screen shown after "Add Item" clicked 
 #![add item clicked](Images/screenshot_additem_clicked.png)
+
+* CANCEL the action : User can click native backwards key from your device to go back to the previous page
+
 
 #### 4.1.1 Text Search
 
