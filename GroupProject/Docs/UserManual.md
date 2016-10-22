@@ -110,6 +110,19 @@ After a list is added to the profile, there is also an option to remove the list
 :arrow_down_small: Screen shown after clicking "Hierarchical List" is clicked
 #![hierarchy clicked](Images/screenshot_hierarchy_clicked.png)
 
+:arrow_down_small: Screen shown after clicking "Hierarchical List" is clicked
+#![hierarchy type clicked](Images/screenshot_hierarchy_type_clicked.png)
+
+:arrow_down_small: Screen shown after clicking "Hierarchical List" is clicked
+#![hierarchy item clicked](Images/screenshot_hierarchy_item_clicked.png)
+
+:scroll: _STEPS_
+* STEP 1: Select Add Item
+* STEP 2: Select Hierarchal List
+* STEP 3: Select Type
+* STEP 4: Select Item
+* Step 5: Set Quantity
+
 ### 4.2 Removing Items
 
 After an item is added to the list, there is an option to remove the item by selecting the <img src="Images/remove_sign.png" alt="X icon" width="20" height="20"/> button next to the item.
