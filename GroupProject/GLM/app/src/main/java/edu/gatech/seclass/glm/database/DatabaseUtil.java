@@ -223,6 +223,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
             item.setId(cursor.getString(cursor.getColumnIndex(GROCERY_LIST_ID)));
             item.setName(cursor.getString(cursor.getColumnIndex(GROCERY_LIST_NAME)));
         }
+        cursor.close();
         return item;
     }
 
@@ -255,6 +256,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         values.put(GROCERY_LIST_NAME, item.getName());
         values.put(GROCERY_LIST_ID, item.getId());
         db.insert(TABLE_GROCERY_LISTS, null, values);
+        db.close();
     }
 
     public void addItemToGroceryList(IteminList item, String grocery_list_id) {
@@ -273,6 +275,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         }
         values.put(GROCERY_LIST_ID, grocery_list_id);
         db.insert(TABLE_GROCERY_LIST_ITEMS, null, values);
+        db.close();
     }
 
 
@@ -318,6 +321,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         values.put(GROCERY_LIST_NAME, item.getName());
         values.put(GROCERY_LIST_ID, item.getId());
         db.update(TABLE_GROCERY_LISTS, values, GROCERY_LIST_ID + " = ?", new String[]{item.getId()});
+        db.close();
     }
 
 
@@ -329,6 +333,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         values.put(ITEM_TYPE, item.getType());
         values.put(ITEM_QUANTITY_UNIT, item.getQuantityUnit());
         db.insert(TABLE_ALL_ITEMS, null, values);
+        db.close();
     }
 
     public void populateDB(){
