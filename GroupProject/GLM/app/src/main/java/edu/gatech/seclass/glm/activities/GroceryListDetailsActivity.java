@@ -195,8 +195,6 @@ public class GroceryListDetailsActivity extends AppCompatActivity implements Vie
     }
 
 
-    // TODO change the types as a spinner dropdown menu and pull type from database
-    // Currently manual type in types for new item
 
     public void itemnNewSelected(IteminData item){
         dialog.dismiss();
