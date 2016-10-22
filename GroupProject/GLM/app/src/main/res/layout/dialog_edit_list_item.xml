@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 android:background="@color/white"
 android:orientation="vertical"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:layout_width="180dp">
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_marginBottom="5dp"
         android:gravity="left"
         android:text="Enter quantity:"
-        android:textColor="@color/colorPrimary"
         android:background="@color/white"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:layout_weight="1"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:textColor="@color/colorPrimary" />
 
     <EditText
         android:id="@+id/ed_item_quantity"
@@ -24,37 +24,34 @@ android:orientation="vertical"
         android:gravity="left"
         android:hint="Item Quantity"
         android:background="@null"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#000"
         android:textSize="18sp"
         android:maxLines="1"
         android:layout_weight="1"
         android:inputType="number"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="98dp"
-        android:layout_height="69dp">
+        android:layout_width="153dp"
+        android:layout_weight="2.41"
+        android:layout_height="40dp">
 
         <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_width="40dp"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btn_save_item"
             android:text="Save"
             style="@style/buttonStyle"
 
-            android:layout_width="57dp"
-            android:layout_height="60dp"
+            android:layout_width="98dp"
+            android:layout_height="40dp"
             android:visibility="visible"
             android:layout_marginLeft="80dp"
             android:layout_margin="0dp" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
