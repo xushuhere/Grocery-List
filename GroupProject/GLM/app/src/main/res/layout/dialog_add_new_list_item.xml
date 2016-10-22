@@ -129,6 +129,7 @@ android:orientation="vertical">
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
+            android:background="@null"
             android:maxLines="1"
             android:id="@+id/new_item_quantity_unit"
             android:textColor="#000000"
