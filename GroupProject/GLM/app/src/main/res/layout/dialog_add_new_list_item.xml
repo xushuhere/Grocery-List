@@ -68,6 +68,7 @@ android:orientation="vertical">
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/new_item_type"
+            android:background="@null"
             android:hint="Item type"
             android:dropDownWidth="match_parent"
             android:minHeight="40dp" />
